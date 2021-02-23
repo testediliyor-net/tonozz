@@ -1,0 +1,71 @@
+@mixin align($prefix: "") {
+  .text#{$prefix}-left {
+    text-align: left !important;
+  }
+
+  .text#{$prefix}-center {
+    text-align: center !important;
+  }
+
+  .text#{$prefix}-right {
+    text-align: right !important;
+  }
+
+  .justify#{$prefix}-start {
+    justify-content: flex-start !important;
+  }
+
+  .justify#{$prefix}-center {
+    justify-content: center !important;
+  }
+
+  .justify#{$prefix}-end {
+    justify-content: flex-end !important;
+  }
+
+  .justify#{$prefix}-evenly {
+    justify-content: space-evenly !important;
+  }
+
+  .justify#{$prefix}-between {
+    justify-content: space-between !important;
+  }
+
+  .align#{$prefix}-start {
+    align-items: flex-start !important;
+  }
+
+  .align#{$prefix}-center {
+    align-items: center !important;
+  }
+
+  .align#{$prefix}-end {
+    align-items: flex-end !important;
+  }
+
+  .align#{$prefix}-evenly {
+    align-items: space-evenly !important;
+  }
+
+  .align#{$prefix}-between {
+    align-items: space-between !important;
+  }
+
+  .align#{$prefix}-self-end {
+    align-self: flex-end !important;
+  }
+}
+
+@include align();
+
+@include tablet {
+  @include align("-sm");
+}
+
+@include pc {
+  @include align("-md");
+}
+
+@include xl {
+  @include align("-pc");
+}

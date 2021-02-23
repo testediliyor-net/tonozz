@@ -1,0 +1,41 @@
+<div class="base-newsletter py-5 py-md-10">
+  <div class="container flex flex-column flex-sm-row justify-between align-center">
+    <span class="fs-1x fs-sm-1y fs-md-2 fw-bold color-secondary mb-2 mb-sm-0">Join Our Newsletter</span>
+    <a class="button button-primary-dark py-1 py-sm-1 mw-sm-20x fs-1 text-center" (click)="openModal()">Subscribe</a>
+  </div>
+</div>
+
+<div class="modal subscribe-modal" *ngIf="isOpenModal">
+  <div class="modal-context align-center p-3 p-md-5 flex-column flex-md-row">
+    <div class="modal-close">
+      <button (click)="closeModal()"><i class="fas fa-times"></i></button>
+    </div>
+
+
+    <div class="grid-group">
+      <img src="assets/images/subscribe-image.png" class="mw-10x mw-md-30x" alt="" />
+    </div>
+
+    <div class="grid-group mb-3">
+      <div class="mb-4">
+        <h1 class="color-primary fs-1x fs-md-2">Subscribe</h1>
+        <p class="fw-5 color-secondary fs-0x fs-md-1x">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+          doloremque
+          laudantium, totam rem aperiam
+          dicta sunt explicabo.</p>
+      </div>
+
+      <div class="">
+        <div class="form-group-box flex m-0 p-0">
+          <div class="form-group pr-2">
+            <input type="email" placeholder="Your email" />
+          </div>
+          <div class="form-group">
+            <button><img src="assets/images/subscribe-icon.png" alt="Save your email"></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

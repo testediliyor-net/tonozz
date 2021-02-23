@@ -1,0 +1,23 @@
+.newsletter {
+  font-family: $font-noto;
+
+  h1 {
+    color: $dark-gray;
+  }
+
+  &-form {
+    max-width: 790px;
+    margin: auto;
+  }
+
+  &-input {
+    flex: 1;
+
+    input {
+      width: 100%;
+      border: 2px solid $dark-gray;
+      height: 100%;
+      padding: 15px 20px;
+    }
+  }
+}

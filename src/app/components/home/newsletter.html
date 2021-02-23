@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="newsletter text-center my-10">
+    <!-- Title-->
+    <h1 class="fs-1x fs-sm-2 mb-sm-4">Newsletter</h1>
+
+    <!-- Description -->
+    <p class="mb-sm-6">Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+
+    <!-- Newsletter Form-->
+    <div class="newsletter-form">
+      <div class="grid grid-row-2 grid-row-gap-1 grid-sm-col-3-1 grid-col-gap-1 grid-sm-row-none">
+        <div class="newsletter-input w-100">
+          <div [ngClass]="isLoading ? 'disabled' : ''" class="h-100">
+            <input type="email" [ngModel]="inputNewsletter" class="fs-1 fs-sm-1x fw-bold"
+              (ngModelChange)="inputNewsletter = $event" [placeholder]="inputNewsletterPlaceholder" />
+          </div>
+        </div>
+        <div class="newsletter-button w-100">
+          <button class="fs-sm-1x button button-primary" [ngClass]="isLoading ? 'disabled' : ''"
+            (click)="onSubscribe()">Subscribe</button>
+        </div>
+      </div>
+      <div class="message mt-2 text-left" [ngClass]="messageStatus">{{messageText}}</div>
+    </div>
+  </div>
+</div>

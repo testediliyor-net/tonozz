@@ -1,0 +1,51 @@
+footer {
+  background-color: $dark-gray3;
+
+  .footer {
+    &-info {
+      p {
+        color: white;
+        max-width: 500px;
+      }
+    }
+    &-social {
+      max-width: 400px;
+
+      a {
+        color: white;
+        display: inline-block;
+        @extend .color-hover;
+      }
+    }
+    &-logo {
+      img {
+        object-fit: cover;
+        height: 100px;
+      }
+    }
+    &-sitemap {
+      &-item {
+        a {
+          display: block;
+          margin-bottom: 15px;
+          span {
+            @extend .line-hover;
+          }
+        }
+      }
+      h2,
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+.copyright {
+  background: $light-gray3;
+  color: $dark-gray;
+
+  a {
+    color: $dark-gray;
+  }
+}

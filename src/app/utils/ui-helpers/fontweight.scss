@@ -1,0 +1,42 @@
+/*
+  Font Weight
+
+  fw-100        : font-weight:100
+  fw-sm-100     : ?
+  fw-bold       : ?
+  fw-md-bold    : ?
+  fw-pc-normal  : ?
+
+  
+  font-weight:200
+  ...
+  font-weight:800
+  font-weight:900
+*/
+@mixin fontWeight($prefix: "") {
+  .fw-#{$prefix}normal {
+    font-weight: normal;
+  }
+  .fw-#{$prefix}bold {
+    font-weight: bold;
+  }
+  @for $i from 1 to 9 {
+    .fw-#{$prefix}#{$i} {
+      font-weight: #{$i * 100} !important;
+    }
+  }
+}
+
+@include fontWeight();
+
+@include tablet {
+  @include fontWeight("sm-");
+}
+
+@include pc {
+  @include fontWeight("md-");
+}
+
+@include xl {
+  @include fontWeight("pc-");
+}

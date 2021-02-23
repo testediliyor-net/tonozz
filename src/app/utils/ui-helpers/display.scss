@@ -1,0 +1,53 @@
+.d {
+  &-block {
+    display: block !important;
+  }
+  &-none {
+    display: none !important;
+  }
+  &-inline {
+    display: inline-block !important;
+  }
+}
+
+@include tablet {
+  .d {
+    &-sm-block {
+      display: block !important;
+    }
+    &-sm-none {
+      display: none !important;
+    }
+    &-sm-inline {
+      display: inline-block !important;
+    }
+  }
+}
+
+@include pc {
+  .d {
+    &-md-block {
+      display: block !important;
+    }
+    &-md-none {
+      display: none !important;
+    }
+    &-md-inline {
+      display: inline-block !important;
+    }
+  }
+}
+
+@include xl {
+  .d {
+    &-pc-block {
+      display: block !important;
+    }
+    &-pc-none {
+      display: none !important;
+    }
+    &-pc-inline {
+      display: inline-block !important;
+    }
+  }
+}

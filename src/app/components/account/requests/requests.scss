@@ -1,0 +1,49 @@
+.requests {
+  &-new-form {
+    border-radius: 15px;
+    border: 1px solid $sky-blue;
+    box-shadow: 0 3px 10px -6px #000;
+  }
+
+  &-posts {
+  }
+
+  &-post {
+    &-header {
+      border-bottom: 1px solid rgba(black, 0.2);
+    }
+    &-user {
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: inline-block;
+        border: 1px solid $sky-blue;
+      }
+    }
+  }
+
+  &-form-item {
+    label {
+      min-width: 120px;
+    }
+
+    &:first-child {
+      input {
+        width: 300px;
+      }
+    }
+
+    &:nth-child(2) {
+      input {
+        width: 100%;
+      }
+    }
+
+    &:last-child {
+      input {
+        width: 140px;
+      }
+    }
+  }
+}

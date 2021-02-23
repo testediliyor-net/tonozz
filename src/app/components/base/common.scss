@@ -1,0 +1,155 @@
+@import "./components/";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: $font-noto;
+}
+
+a,
+input,
+button,
+textarea,
+select {
+  outline: none;
+  resize: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+ul,
+h1,
+h2,
+h3 {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1520px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.rounded {
+  border-radius: 15px;
+}
+
+.bordered {
+  border: 1px solid $sky-blue;
+
+  &-none {
+    border: 0;
+  }
+
+  &-dash {
+    border-style: dashed;
+  }
+
+  &-top {
+    border: 0;
+    border-top: 1px solid $sky-blue;
+  }
+
+  &-left {
+    border: 0;
+    border-left: 1px solid $sky-blue;
+  }
+
+  &-right {
+    border: 0;
+    border-right: 1px solid $sky-blue;
+  }
+
+  &-bottom {
+    border: 0;
+    border-bottom: 1px solid $sky-blue;
+  }
+}
+
+@for $i from 1 to 10 {
+  .z-#{$i} {
+    z-index: $i;
+  }
+}
+
+.flex-auto {
+  flex: 1;
+}
+
+.seperator {
+  height: 1px;
+  background-color: rgba(black, 0.2);
+  margin: {
+    top: 40px;
+    bottom: 40px;
+  }
+}
+
+.color-hover {
+  transition: 0.3s;
+
+  &:hover,
+  &:hover label,
+  &:hover i {
+    color: $sky-blue-light;
+  }
+}
+
+.button-hover {
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $sky-blue !important;
+    color: white !important;
+  }
+}
+
+.shadowed {
+  box-shadow: 0 2px 10px -6px #000;
+}
+
+.hover-underline:hover {
+  text-decoration: underline !important;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.line-hover {
+  @extend .color-hover;
+
+  display: inline-block;
+
+  &:after {
+    margin: 2px 0;
+    content: "";
+    display: block;
+    height: 1px;
+    background: $sky-blue-light;
+    transition: 0.3s;
+    width: 0;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
+}

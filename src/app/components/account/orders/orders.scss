@@ -1,0 +1,11 @@
+.orders {
+  &-context {
+    .image-card {
+      border: 1px solid $sky-blue;
+
+      &-image img{
+        height: 70%;
+      }
+    }
+  }
+}

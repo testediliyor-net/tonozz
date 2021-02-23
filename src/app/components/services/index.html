@@ -1,0 +1,60 @@
+<div class="services-header shadowed bordered">
+  <div class="container py-2 text-right">
+    <div dropdown class="dropdown d-inline" [selectedClass]="'bg-color-primary color-white radius-4x'"
+      [datas]="categories"></div>
+  </div>
+</div>
+<div class="services-context">
+  <div class="container py-4">
+    <div class="services-content grid grid-sm-col-1-2 grid-md-col-1-3">
+      <div class="services-menu">
+        <accordion [datas]="serviceCategoryDatas" [selectedIndex]="0"></accordion>
+      </div>
+      <div class="services-body grid grid-md-col-2 grid-pc-col-4 grid-col-gap-2">
+        <div class="services-item mb-2" *ngFor="let i of servicesDatas">
+          <div class="bg-color-primary fs-1 color-white py-4x px-1 radius-tl-7x radius-tr-7x" *ngIf="i.sponsored">
+            Sponsored</div>
+          <div class="image-card">
+            <div class="remove-services"><i class="fas fa-heart fs-2 text-hover-primary"></i></div>
+            <div class="image-card-header">
+              <div class="image-card-image">
+                <img src="assets/images/office-1209640_640.jpg" alt="" />
+              </div>
+              <div class="image-card-title fs-1 py-1">Lorem Ipsum Dolor</div>
+            </div>
+            <div class="image-card-content flex">
+              <div class="services-user flex align-center">
+                <img src="assets/images/users/user-image.jpg" alt="" />
+                <label class="fs-1 color-secondary">John Smith</label>
+              </div>
+            </div>
+            <div class="image-card-footer px-2 py-1 align-center">
+              <i class="far fa-heart fs-1x"></i>
+              <span class="fs-1x">999 $</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container seperator my-2 my-md-4 m-auto"></div>
+
+<div class="how-we-work py-3 py-md-8">
+  <div class="container grid-md grid-md-col-2 grid-md-col-gap-8">
+    <div class="color-secondary">
+      <h1 class="fs-1y fs-md-3">How We Work</h1>
+      <p class="fs-0y fs-md-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+    </div>
+    <div>
+      <img src="assets/images/video-image.png" alt="" class="w-100" />
+    </div>
+  </div>
+</div>
+
+<base-newsletter>
+</base-newsletter>

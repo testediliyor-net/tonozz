@@ -1,0 +1,15 @@
+<div class="container px-3">
+  <div class="account-container py-10">
+    <div class="account-menu">
+      <div class="account-menu-context">
+        <a [routerLink]='["general"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">General Settings</a>
+        <a [routerLink]='["bank-and-payment"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Bank and Payment</a>
+        <a [routerLink]='["security"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Security</a>
+        <a [routerLink]='["notification-settings"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Notification Settings</a>
+      </div>
+    </div>
+    <div class="account-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

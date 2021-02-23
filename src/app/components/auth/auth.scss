@@ -1,0 +1,92 @@
+.auth-modal {
+  .modal-context {
+    min-width: 895px;
+    min-height: 603px;
+    background: white;
+    display: flex;
+    padding: 50px 50px 50px 80px;
+
+    .grid-group {
+      flex: 1;
+    }
+
+    .auth-modal-header {
+      h1 {
+        color: $sky-blue;
+        white-space: nowrap;
+        letter-spacing: -0.4px;
+      }
+      p,
+      a {
+        font-size: 1rem;
+      }
+      a {
+        color: $sea-blue;
+      }
+    }
+
+    .auth-modal-form {
+    }
+
+    .auth-modal-other {
+      p.title {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+
+        &:after,
+        &:before {
+          content: "";
+          height: 2px;
+          display: block;
+          background-color: $sky-blue;
+          margin: 0 5px;
+          flex: 1;
+        }
+      }
+
+      &-context {
+        display: flex;
+        align-items: center;
+
+        a {
+          margin: 0 10px;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid $sky-blue;
+
+          @extend .color-hover;
+
+          i {
+            color: $sky-blue;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .auth-modal-image {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        display: block;
+      }
+    }
+
+    .form-group {
+      button {
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}

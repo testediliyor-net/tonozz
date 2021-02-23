@@ -1,0 +1,63 @@
+@mixin position($prefix: "") {
+  .position-#{$prefix}absolute {
+    position: absolute;
+  }
+
+  .position-#{$prefix}relative {
+    position: relative;
+  }
+
+  .position-#{$prefix}none {
+    position: static;
+  }
+
+  .position-#{$prefix} {
+    &y-center {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &x-center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &xy-center {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @for $size from 1 to 100 {
+    .top-#{$prefix}#{$size}x {
+      top: #{$size}px !important;
+    }
+
+    .top-#{$prefix}#{$size} {
+      top: #{$size}#{"%"} !important;
+    }
+
+    .left-#{$prefix}#{$size}x {
+      left: #{$size}px !important;
+    }
+
+    .left-#{$prefix}#{$size} {
+      left: #{$size}#{"%"} !important;
+    }
+
+    $size: $size + 1;
+  }
+}
+
+@include position("");
+
+@include tablet {
+  @include position("sm-");
+}
+
+@include pc {
+  @include position("md-");
+}
+
+@include xl {
+  @include position("lg-");
+}

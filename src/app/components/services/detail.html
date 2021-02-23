@@ -1,0 +1,85 @@
+<div class="container service-detail py-5 grid grid-md-col-3-1 grid-md-col-gap-1 grid-pc-col-2-1 grid-pc-col-gap-3">
+  <div class="service-detail-content mb-4 mb-md-0 radius-10x bordered shadowed p-2">
+    <div class="service-detail-image mb-2">
+      <img src="assets/images/service-detail-image.png" alt="" class="w-100" />
+    </div>
+    <h3 class="fs-1x fs-pc-1y color-gray">İş İlanı Hakkında</h3>
+    <p class="fs-1 fs-pc-1x color-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. hasellus venenatis felis eu
+      sollicitudin
+      bibendum. Etiam lutpat pretium lorem, quis mollis dolor pretium vitae.Lorem ipsum dolor sit
+      amet, consectetur adipiscing elit. asellus venenatis felis eu sollicitudin bibendum. Etiam olutpat
+      pretium lorem, quis mollis dolor pretium vitae.</p>
+    <div class="seperator my-4 bg-color-primary"></div>
+    <h3 class="fs-1x fs-pc-1y color-gray mb-2">Paket İçeriği</h3>
+    <ul class="fs-1 fs-pc-1x color-gray">
+      <li class="mb-1">Lorem ipsum dolor sit amet.</li>
+      <li class="mb-1">Lorem ipsum dolor sit amet.</li>
+      <li class="mb-1">Lorem ipsum dolor sit amet.</li>
+      <li class="mb-1">Lorem ipsum dolor sit amet.</li>
+      <li class="mb-1">Lorem ipsum dolor sit amet.</li>
+    </ul>
+    <div class="seperator my-2 bg-color-primary"></div>
+    <div class="flex flex-column flex-md-row justify-end align-center">
+      <span class="fs-1 fs-pc-1x fw-bold mb-2 mb-md-0">Paket İçeriği</span>
+      <div dropdown class="dropdown  mb-2 mb-md-0 fs-1 fs-pc-1x fw-bold color-primary bordered radius-8x mx-2" [datas]="package_categories">
+      </div>
+      <a href="#" class="button button-transparent fs-1 fs-pc-1x fw-bold w-none py-1 radius-8x px-1">Satın Al</a>
+    </div>
+  </div>
+  <div class="service-detail-user">
+    <div class="bordered shadowed radius-10x p-2 text-center mb-5">
+      <app-user-image source="assets/images/users/user-image.jpg" class="mw-10x mw-pc-20x"></app-user-image>
+      <div class="service-detail-user-info">
+        <h5 class="fs-1 fs-pc-1x fw-bold p-0 m-0 color-primary">{{user.name}}</h5>
+        <p class="fs-1 fs-pc-1x fw-bold p-0 m-0 color-gray">{{user.job}}</p>
+      </div>
+      <div class="my-1">
+        <a href="#" class="button button-transparent fs-1 fs-pc-1x bordered radius-10x py-1 w-70">Mesaj Gönder</a>
+      </div>
+      <div class="seperator my-4 bg-color-primary"></div>
+      <div>
+        <ul class="fs-1 fs-pc-1x color-gray">
+          <li class="flex justify-between align-center mb-2">
+            <span class="flex align-center">
+              <i class="fas fs-1y fa-eye mr-2 color-primary"></i>
+              <label>Son Görülme</label>
+            </span>
+            <span class="fw-bold">8 min</span>
+          </li>
+          <li class="flex justify-between align-center mb-2">
+            <span class="flex align-center">
+              <i class="fas fs-1y fa-comment-alt mr-2 color-primary"></i>
+              <label>Ort. Yanıt Süresi</label>
+            </span>
+            <span class="fw-bold">13 min</span>
+          </li>
+          <li class="flex justify-between align-center mb-2">
+            <span class="flex align-center">
+              <i class="fas fs-1y fa-coins mr-2 color-primary"></i>
+              <label>Son İş Teslimi</label>
+            </span>
+            <span class="fw-bold">3 hr</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="">
+      <div class="bordered shadowed radius-10x p-3 text-center">
+        <a href="#" class="button button-transparent fs-1 fs-pc-1x bordered radius-10x py-1 w-70 mb-2 px-0">Favorilerime
+          Ekle</a>
+        <div class=" flex justify-center align-center">
+          <span class="fs-1 fs-pc-1x fw-bold color-primary">Paylaş</span>
+          <div class="flex align-center px-2">
+            <a href="#" class="mx-1"><i class="fab fa-facebook color-black fs-1y"></i></a>
+            <a href="#" class="mx-1"><i class="fab fa-twitter color-black fs-1y"></i></a>
+            <a href="#" class="mx-1"><i class="fab fa-linkedin color-black fs-1y"></i></a>
+            <a href="#" class="mx-1"><i class="fas fa-link color-black fs-1y"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="my-2 flex align-center justify-center">
+        <i class="fas fa-flag mr-2 color-primary fs-1y"></i> <a href="#" class="color-gray fs-1 fs-md-1x line-hover">Bu ilanı bildir</a>
+      </div>
+    </div>
+  </div>
+</div>

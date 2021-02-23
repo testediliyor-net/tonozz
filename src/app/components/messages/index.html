@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="grid grid-sm-col-gap-2 grid-sm-col-1-3 py-3">
+    <div class="message-users">
+      <div class="message-users-list">
+        <div class="message-user bordered radius-15x flex align-center p-1 mb-2" *ngFor="let user of users"
+          (click)="selectUser(user)" [ngClass]="{ 'active' :selectedUser && user.id=== selectedUser.id }">
+          <app-user-image source="assets/images/users/user-image.jpg" class="w-50x w-sm-100x mr-2"></app-user-image>
+          <span class="fs-0y fs-md-1x fs-pc-1y fw-bold color-gray">{{user.name}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="message-board">
+      <div class="bordered radius-15x bg-color-light-gray">
+        <div class="flex flex-column px-2 py-2 ">
+          <h1 class="fs-1y color-gray">Messages</h1>
+          <div class="message-list py-2 py-md-4 flex-auto" #messagelist>
+            <p *ngIf="!messages.length" class="py-3 fs-1x color-gray justify-center w-100 text-center">
+              You have not yet written a message for this person.</p>
+            <p class="message-to" *ngFor="let message of messages" [ngClass]="{
+            'message-to-its':message.fromId == me.id,
+            'message-to-me':message.fromId != me.id,
+            'color-primary':message.type === 'bid' || message.type === 'oth',
+            'fw-bold my-1':message.type === 'bid'
+          }">
+
+              {{message.message}}
+
+              <a href="#" class='button button-transparent fw-bold fs-1 px-3 py-1 bg-color-white radius-5x ml-2'
+                *ngIf="message.type == 'bid' && message.extras.isPaid && message.toId === me.id">
+                Ödeme Yap
+              </a>
+            </p>
+          </div>
+          <div class="flex flex-column flex-md-row justify-between py-1 px-2">
+            <a class="button button-transparent py-1 px-2 bordered radius-5x mb-1 mb-md-0" (click)="jobDone()">İş Tamamlandı</a>
+            <a class="button button-transparent py-1 px-2 bordered radius-5x mb-1 mb-md-0" (click)="jobCompleted()">İş Yapıldı</a>
+            <a class="button button-transparent py-1 px-2 bordered radius-5x mb-1 mb-md-0" (click)="sendBid()">Fiyat Teklifi Gönder</a>
+          </div>
+        </div>
+        <div class="bordered-top bg-color-white radius-15x p-2 flex" (mousedown)="focusField(messageField)">
+          <div class="flex flex-auto message-field">
+            <input class="bordered-none bordered-bottom align-self-end" (keyup.enter)="sendMessage(messageField)" #messageField
+              placeholder="Your message" />
+          </div>
+          <div class="flex message-send">
+            <button class="align-self-end" (click)="sendMessage(messageField)"><img
+                src="assets/images/message-send.png" /></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

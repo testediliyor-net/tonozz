@@ -1,0 +1,119 @@
+<header>
+  <div class="container">
+    <div class="header-context">
+      <!--
+        Tonozz Logo
+      -->
+      <div class="header-logo">
+        <a routerLink="/"><img src="assets/images/base/tonozz-logo.png" class="mw-20x mw-md-30x mw-pc-40x"
+            alt="Tonozz" /></a>
+      </div>
+
+      <!-- \/\/\/\/ Show If User Is Authenticated \/\/\/\/ -->
+      <div class="header-user-content pt-2 pl-4 d-none">
+
+        <!-- Search Input Area -->
+        <div class="header-search flex pr-4">
+          <div class="header-search-input">
+            <input type="text" placeholder="Arama yap" />
+            <i class="fas fa-search"></i>
+          </div>
+        </div>
+
+        <!-- User Menu Control -->
+        <div class="header-controls">
+          <div class="header-hamburger-menu"> <a href="#" class="px-2"><i class="fas fa-list-ul"></i></a></div>
+          <div class="user-messages"><a href="#" class="px-2"><i class="fas fa-comment-alt"></i></a></div>
+          <div class="user-alerts"><a href="#" class="px-2"><i class="fas fa-bell"></i></a></div>
+          <div class="user-panel" (window:mouseup)="isOpenUserModal = false">
+            <div class="user-login">
+              <a href="#" (click)="isOpenUserModal=!isOpenUserModal">
+                <img src="assets/images/users/user-image.jpg" alt="" />
+                <label>John Smith Moonlight</label>
+                <i class="fas" [ngClass]="isOpenUserModal ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!--\/\/\/ Show If User is not Authenticated  \/\/\/-->
+      <div class="header-base-content">
+        <ul class="d-none flex-sm fs-md-1x fs-xl-2">
+          <li><a [routerLink]="['services']">SERVICES</a></li>
+          <li><a href="#">JOB OFFERS</a></li>
+          <li><a [routerLink]="['blog']">BLOG</a></li>
+          <li><a href="#">CONTACT</a></li>
+          <li><a href="#" (click)="openLoginModal(true)">LOGIN</a></li>
+          <li><a href="#" (click)="openRegisterModal(true)" class="color-primary">SIGN UP</a></li>
+        </ul>
+        <button class="d-sm-none py-1 fs-2 button button-transparent cursor mh-30x"
+          (click)="isVisibleMobileMenu = !isVisibleMobileMenu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+    <div class="search-filter-container">
+      <div class="search-filter">
+        <div dropdown class="sf-item sf-dropdown dropdown fs-1 fs-md-1x" [datas]="categories"></div>
+        <div class="sf-item sf-input">
+          <label class="fs-1 fs-md-1x">What: </label>
+          <div class="sf-input-field">
+            <input type="input" class="fs-1 fs-md-1x" placeholder="Restourants, Hotels, Shops" />
+          </div>
+          <i class="fas fa-search"></i>
+        </div>
+        <div class="sf-item sf-input">
+          <label class="fs-1 fs-md-1x">Where: </label>
+          <div class="sf-input-field">
+            <input type="input" class="fs-1 fs-md-1x" placeholder="Port, Anchorage" />
+          </div>
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="sf-item sf-button">
+          <button class="button button-primary-dark">Search</button>
+        </div>
+      </div>
+    </div>
+    <div class="home-arrow-down">
+      <i class="fas fa-chevron-down" (click)="scrollDown()"></i>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu-->
+
+<div class="mobile-menu" *ngIf="isVisibleMobileMenu">
+  <div class="mobile-menu-close">
+    <button (click)="isVisibleMobileMenu = !isVisibleMobileMenu"><i class="far fa-times-circle fs-3 color-white"></i></button>
+  </div>
+  <div class="mobile-menu-context">
+    <ul>
+      <li><a [routerLink]="['services']">SERVICES</a></li>
+      <li><a href="#">JOB OFFERS</a></li>
+      <li><a [routerLink]="['blog']">BLOG</a></li>
+      <li><a href="#">CONTACT</a></li>
+      <li><a href="#" (click)="openLoginModal(true)">LOGIN</a></li>
+      <li><a href="#" (click)="openRegisterModal(true)" class="color-primary">SIGN UP</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="header-inner-menu shadowed">
+  <div class="container relative">
+    <div class="header-inner-menu-context fs-0x fs-sm-1y py-2 align-center">
+      <a [routerLink]="['services']">SERVICES</a>
+      <a [routerLink]="['services']">JOB OFFERS</a>
+      <a [routerLink]="['blog']">BLOG</a>
+      <a [routerLink]="['contact']">CONTACT</a>
+    </div>
+    <div class="user-modal" [ngClass]="isOpenUserModal ? '':'d-none'">
+      <a href="#"><i class="far fa-id-card"></i> <label>Profile</label></a>
+      <a href="#"><i class="fas fa-cog"></i> <label>Account</label></a>
+      <a href="#"><i class="fas fa-question-circle"></i> <label>Help</label></a>
+      <a href="#"><i class="fas fa-door-open"></i> <label>Exit</label></a>
+    </div>
+  </div>
+</div>
+
+<login-modal *ngIf="isOpenLoginModal" (onOpen)="openLoginModal($event)"></login-modal>
+<register-modal *ngIf="isOpenRegisterModal" (onOpen)="openRegisterModal($event)"></register-modal>

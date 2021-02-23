@@ -1,0 +1,112 @@
+@mixin grid($prefix: "") {
+  .flex#{$prefix} {
+    display: flex !important;
+  }
+
+  .flex#{$prefix}-column {
+    flex-direction: column;
+  }
+
+  .flex#{$prefix}-row {
+    flex-direction: row;
+  }
+
+  .flex#{$prefix}-row-rev {
+    flex-direction: row-reverse !important;
+  }
+
+  .flex#{$prefix}-column-rev {
+    flex-direction: column-reverse !important;
+  }
+
+  .flex#{$prefix}-wrap {
+    flex-wrap: wrap;
+  }
+
+  .grid#{$prefix} {
+    display: grid !important;
+  }
+
+  .flex#{$prefix}-none {
+    display: block !important;
+  }
+
+  .grid#{$prefix}-row-none {
+    grid-template-rows: none !important;
+  }
+
+  .grid#{$prefix}-col-none {
+    grid-template-columns: none !important;
+  }
+
+  @for $i from 2 to 5 {
+    .grid#{$prefix}-col-1-#{$i} {
+      grid-template-columns: 1fr #{$i}fr;
+    }
+    .grid#{$prefix}-col-1-1-#{$i} {
+      grid-template-columns: 1fr 1fr #{$i}fr;
+    }
+  }
+
+  @for $i from 1 to 5 {
+    .grid#{$prefix}-col-2-#{$i} {
+      grid-template-columns: 2fr #{$i}fr;
+    }
+    .grid#{$prefix}-col-2-1-#{$i} {
+      grid-template-columns: 2fr 1fr #{$i}fr;
+    }
+  }
+
+  @for $i from 1 to 5 {
+    .grid#{$prefix}-col-3-#{$i} {
+      grid-template-columns: 3fr #{$i}fr;
+    }
+    .grid#{$prefix}-col-3-1-#{$i} {
+      grid-template-columns: 3fr 1fr #{$i}fr;
+    }
+  }
+
+  @for $i from 1 to 12 {
+    .grid#{$prefix}-col-gap-#{$i} {
+      column-gap: #{$i}rem;
+    }
+
+    .flex#{$prefix}-col-#{$i} {
+      width: #{100 / $i}#{"%"};
+    }
+
+    .grid#{$prefix}-row-gap-#{$i} {
+      row-gap: #{$i}rem;
+    }
+
+    .grid#{$prefix}-col-#{$i} {
+      grid-template-columns: repeat(#{$i}, [col-start] 1fr [col-end]);
+    }
+
+    .grid#{$prefix}-row-#{$i} {
+      grid-template-rows: repeat(#{$i}, [col-start] 1fr [col-end]);
+    }
+  }
+}
+
+@include grid();
+
+@include mobile {
+  @include grid("-xs");
+}
+
+@include tablet {
+  @include grid("-sm");
+}
+
+@include pc {
+  @include grid("-md");
+}
+
+@include lg {
+  @include grid("-pc");
+}
+
+@include xl {
+  @include grid("-xl");
+}

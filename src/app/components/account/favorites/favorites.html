@@ -1,0 +1,9 @@
+<div class="account-content-view">
+  <h1 class="mb-3 account-content-title">My Favorites</h1>
+  <div class="favourites-context grid grid-md-col-2 grid-pc-col-4 grid-col-gap-2">
+    <div class="favourites-item mb-2" *ngFor="let fvr of favorite_datas">
+      <image-card [data]="fvr"></image-card>
+    </div>
+  </div>
+
+</div>

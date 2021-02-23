@@ -1,0 +1,96 @@
+.form-group {
+  margin-bottom: 15px;
+
+  input,
+  button {
+    width: 100%;
+    border: 2px solid $sky-blue;
+  }
+
+  &-light {
+    input,
+    button {
+      border-width: 1px;
+    }
+  }
+
+  input {
+    padding: 13px 20px;
+    color: $dark-gray;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  button {
+    padding: 10px 15px;
+    color: white;
+    background-color: $sky-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.with-icon {
+    position: relative;
+
+    i {
+      position: absolute;
+      right: 20px;
+      pointer-events: none;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    input {
+      padding-right: 40px;
+    }
+  }
+}
+
+.input-checkbox {
+  display: flex;
+  align-items: center;
+
+  span {
+    display: inline-block;
+    border: 2px solid $sky-blue;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+
+    input {
+      opacity: 0;
+      width: 20px;
+      height: 20px;
+    }
+
+    i {
+      display: none;
+      position: absolute;
+      pointer-events: none;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: $sky-blue;
+    }
+
+    input:checked + i {
+      display: block;
+    }
+  }
+}
+
+::-webkit-input-placeholder {
+  color: $dark-gray;
+}
+::-moz-placeholder {
+  color: $dark-gray;
+}
+:-ms-input-placeholder {
+  color: $dark-gray;
+}
+:-moz-placeholder {
+  color: $dark-gray;
+}

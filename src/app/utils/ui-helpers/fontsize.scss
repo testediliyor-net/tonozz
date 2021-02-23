@@ -1,0 +1,43 @@
+@mixin fontSize($prefix: "") {
+  .fs-#{$prefix}0 {
+    font-size: 12px;
+  }
+
+  .fs-#{$prefix}0x {
+    font-size: 13px;
+  }
+  
+  .fs-#{$prefix}0y {
+    font-size: 14px;
+  }
+
+  @for $i from 1 to 40 {
+    .fs-#{$prefix}#{$i} {
+      font-size: #{$i}rem !important;
+    }
+    .fs-#{$prefix}#{$i}x {
+      font-size: #{$i + 0.3}rem !important;
+    }
+    .fs-#{$prefix}#{$i}y {
+      font-size: #{$i + 0.6}rem !important;
+    }
+  }
+}
+
+@include fontSize();
+
+@include tablet {
+  @include fontSize("sm-");
+}
+
+@include pc {
+  @include fontSize("md-");
+}
+
+@include lg {
+  @include fontSize("pc-");
+}
+
+@include xl {
+  @include fontSize("xl-");
+}

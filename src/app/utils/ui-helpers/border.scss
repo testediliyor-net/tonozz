@@ -1,0 +1,72 @@
+@mixin radius($prefix: "") {
+  .radius-#{$prefix}0 {
+    border-radius: 0;
+  }
+
+  .radius-#{$prefix}tl-0 {
+    border-top-left-radius: 0;
+  }
+  .radius-#{$prefix}tr-0 {
+    border-top-right-radius: 0;
+  }
+  .radius-#{$prefix}br-0 {
+    border-bottom-right-radius: 0;
+  }
+  .radius-#{$prefix}bl-0 {
+    border-bottom-left-radius: 0;
+  }
+
+  @for $i from 1 to 60 {
+    .radius-#{$prefix}#{$i} {
+      border-radius: #{$i}#{"%"} !important;
+    }
+
+    .radius-#{$prefix}#{$i}x {
+      border-radius: #{$i}#{"px"} !important;
+    }
+
+    .radius-#{$prefix}tl-#{$i}x {
+      border-top-left-radius: #{$i}#{"px"} !important;
+    }
+    .radius-#{$prefix}tr-#{$i}x {
+      border-top-right-radius: #{$i}#{"px"} !important;
+    }
+    .radius-#{$prefix}br-#{$i}x {
+      border-bottom-right-radius: #{$i}#{"px"} !important;
+    }
+    .radius-#{$prefix}bl-#{$i}x {
+      border-bottom-left-radius: #{$i}#{"px"} !important;
+    }
+
+    .radius-#{$prefix}tl-#{$i} {
+      border-top-left-radius: #{$i}#{"%"} !important;
+    }
+    .radius-#{$prefix}tr-#{$i} {
+      border-top-right-radius: #{$i}#{"%"} !important;
+    }
+    .radius-#{$prefix}br-#{$i} {
+      border-bottom-right-radius: #{$i}#{"%"} !important;
+    }
+    .radius-#{$prefix}bl-#{$i} {
+      border-bottom-left-radius: #{$i}#{"%"} !important;
+    }
+  }
+}
+
+@include radius();
+
+@include tablet {
+  @include radius("sm-");
+}
+
+@include pc {
+  @include radius("md-");
+}
+
+@include lg {
+  @include radius("pc-");
+}
+
+@include xl {
+  @include radius("xl-");
+}

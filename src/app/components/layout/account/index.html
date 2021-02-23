@@ -1,0 +1,39 @@
+<div class="container px-sm-3">
+  <div class="account-container py-3 py-md-10">
+    <div class="account-menu d-none flex-md ">
+      <div class="account-menu-context">
+        <a [routerLink]='["/account"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Tonozz</a>
+        <a [routerLink]='["orders"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">My Orders</a>
+        <a [routerLink]='["requests"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">My Special
+          Requests</a>
+        <a [routerLink]='["favorites"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">My
+          Favorites</a>
+        <a [routerLink]='["finance"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Finance</a>
+        <a [routerLink]='["sales"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">My Sales</a>
+        <a [routerLink]='["posts"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">My Posts</a>
+        <a [routerLink]='["tocoin"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">My Tocoin
+          Account</a>
+      </div>
+    </div>
+    <div class="account-content">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+  <!-- En populer hizmetler-->
+  <div class="seperator"></div>
+  <div class="account-populer mb-4">
+    <div class="flex-sm">
+      <div class="mw-30x6 d-none d-md-block">
+
+      </div>
+      <div>
+        <h1 class="fs-2 color-gray-light mb-4">En Popüler Hizmetler</h1>
+        <div class="grid grid-col-1 grid-sm-col-2 grid-pc-col-3 grid-col-gap-2">
+          <image-card *ngFor="let pop of populer_datas" class="mb-2" [data]="pop"></image-card>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

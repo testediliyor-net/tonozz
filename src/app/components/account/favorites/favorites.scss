@@ -1,0 +1,36 @@
+.favourites {
+  &-context {
+    .image-card {
+      position: relative;
+      border: 1px solid $sky-blue;
+
+      .remove-favourite {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+
+        i {
+          color: white;
+        }
+      }
+      &-image img {
+        height: 70%;
+      }
+
+      &-content {
+        .favourite-user {
+          padding: 10px 10px;
+
+          img {
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            border-radius: 50%;
+            border: 1px solid $sky-blue;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+@import "./base/";
+@import "./ui-helpers/";
+@import "./ui/";
+
+/*
+Element Colors
+*/
+
+.text-hover-primary {
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    color: $sky-blue !important;
+  }
+}
+
+@mixin colors($prefix: "") {
+  .color#{$prefix}-primary {
+    color: $sky-blue !important;
+  }
+
+  .color#{$prefix}-secondary,
+  .color#{$prefix}-dark-gray {
+    color: $dark-gray !important;
+  }
+
+  .color#{$prefix}-gray {
+    color: $dark-gray2;
+  }
+
+  .color#{$prefix}-gray-light {
+    color: $dark-gray3 !important;
+  }
+
+  .color#{$prefix}-white {
+    color: white !important;
+  }
+
+  .color#{$prefix}-black {
+    color: black !important;
+  }
+
+  .bg#{$prefix}-color-white {
+    background: white !important;
+  }
+
+  .bg#{$prefix}-color-primary {
+    background-color: $sky-blue !important;
+  }
+
+  .bg#{$prefix}-color-gray {
+    background-color: $dark-gray !important;
+  }
+
+  .bg#{$prefix}-color-light-gray {
+    background-color: $light-gray;
+  }
+}
+
+@include colors("");
+
+@include tablet {
+  @include colors("-sm");
+}
+
+@include pc {
+  @include colors("-md");
+}

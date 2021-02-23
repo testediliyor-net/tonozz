@@ -1,0 +1,34 @@
+<div class="account-content-view">
+  <h1 class="mb-3 account-content-title">My Active Job Posts</h1>
+  <div class="posts-context grid grid-md-col-2 grid-pc-col-4 grid-col-gap-2 mb-4">
+    <div class="posts-item mb-3" *ngFor="let post of post_datas">
+      <image-card [data]="post"></image-card>
+    </div>
+  </div>
+  <h1 class="mb-3 account-content-title">My Passive Job Posts</h1>
+  <div class="posts-context grid grid-md-col-2 grid-pc-col-4 grid-col-gap-2">
+    <div class="posts-item mb-3" *ngFor="let i of [1,2,3,4,5,6]">
+      <div class="image-card">
+        <div class="image-card-header">
+          <div class="image-card-image">
+            <img src="assets/images/office-1209640_640.jpg" alt="" />
+          </div>
+          <div class="image-card-title fs-1 py-1">Lorem Ipsum Dolor</div>
+        </div>
+        <div class="image-card-content flex">
+          <div class="post-user flex align-center">
+            <img src="assets/images/users/user-image.jpg" alt="" />
+            <label class="fs-1 color-secondary">John Smith</label>
+          </div>
+        </div>
+        <div class="image-card-footer px-2 py-1 align-center">
+          <i class="far fa-heart fs-1x"></i>
+          <span class="fs-1 fw-bold">999 $</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="my-3 text-center">
+    <a href="#" class="py-1 px-3 rounded bordered fw-bold fs-1x color-primary button-hover">Create New Job Post</a>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+.accordion {
+  &-title {
+    background: $sky-blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+      transition: .3s;
+      --brd: 2px solid #fff;
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-right: var(--brd);
+      border-bottom: var(--brd);
+      position: absolute;
+      right: 14px;
+      top: 20px;
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
+  &-list {
+    display: none;
+    transition: max-height 0.2s ease-out;
+
+    &-item {
+      padding: 10px 20px;
+      &:not(:last-child) {
+        border-bottom: 1px solid $light-gray4;
+      }
+    }
+  }
+
+  &.active {
+    .accordion-list {
+      display: block;
+    }
+
+    .accordion-title {
+      &:after {
+        transform: translateY(-50%) rotate(-135deg);
+        top: 24px;
+      }
+    }
+  }
+}

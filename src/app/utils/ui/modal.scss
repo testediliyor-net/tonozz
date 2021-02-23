@@ -1,0 +1,60 @@
+.modal {
+  position: fixed;
+  background-color: rgba(black, 0.5);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+
+  .modal-context {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    max-height: 500px;
+    border: 2px solid $sky-blue;
+    box-shadow: 10px 10px 0 -2px rgba(black, 0.3);
+    padding: 30px;
+  }
+
+  &-close {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    border: 2px solid $sky-blue;
+    border-radius: 50%;
+
+    button {
+      display: flex;
+      font-size: 16px;
+      align-items: center;
+      justify-content: center;
+      color: $sky-blue;
+      background: none;
+      border: none;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: 0.3s;
+      border-radius: 50%;
+
+      &:hover {
+        background: $sky-blue;
+        color: white;
+      }
+    }
+  }
+}
+
+@include pc {
+  .modal {
+    &-close {
+      button {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}

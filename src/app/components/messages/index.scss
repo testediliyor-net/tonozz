@@ -1,0 +1,95 @@
+.messages-page {
+  .message-user {
+
+    &.active,
+    &:hover {
+      background-color: $sky-blue-lime;
+    }
+  }
+
+  .message-users {
+    overflow: hidden;
+    min-width: 290px;
+
+    .message-user {
+      cursor: pointer;
+    }
+
+    .message-users-list {
+      overflow: hidden;
+      overflow-y: auto;
+      max-height: 743px;
+      padding-right: 20px;
+      position: relative;
+      margin-right: -20px;
+    }
+  }
+
+  .message-send {
+    button {
+      height: fit-content;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      position: relative;
+
+      &:active {
+        top: 1px;
+      }
+
+      img {
+        pointer-events: none;
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+
+  .message-field {
+    overflow: hidden;
+    height: 115px;
+    cursor: text;
+
+    input {
+      height: 30px;
+      text-align: right;
+      margin-right: -171px;
+      width: 100%;
+      font-size: 1rem;
+      padding-right: 20px;
+
+      &::-webkit-input-placeholder,
+      &::-moz-placeholder,
+      &:-ms-input-placeholder,
+      &:-moz-placeholder {
+        font-size: 18px;
+        color: #666;
+      }
+    }
+  }
+
+  .message-list {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 400px;
+    padding: {
+      left: 20px;
+      right: 20px;
+    }
+
+    p {
+      align-self: flex-end;
+      width: 80%;
+      color: black;
+      text-align: right;
+
+      &.message-to-me {
+        color: $dark-gray3;
+        align-self: flex-start;
+        text-align: left;
+      }
+    }
+  }
+}

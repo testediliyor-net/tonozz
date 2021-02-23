@@ -1,0 +1,132 @@
+@mixin paddingMargin($prefix: "") {
+  @for $size from 1 to 10 {
+    .mb-#{$prefix}#{$size}x {
+      margin-bottom: #{$size}px !important;
+    }
+
+    .mt-#{$prefix}#{$size}x {
+      margin-top: #{$size}px !important;
+    }
+
+    .mr-#{$prefix}#{$size}x {
+      margin-right: #{$size}px !important;
+    }
+
+    .ml-#{$prefix}#{$size}x {
+      margin-left: #{$size}px !important;
+    }
+
+    .my-#{$prefix}#{$size}x {
+      margin-top: #{$size}px !important;
+      margin-bottom: #{$size}px !important;
+    }
+
+    .mx-#{$prefix}#{$size}x {
+      margin-top: #{$size}px !important;
+      margin-bottom: #{$size}px !important;
+    }
+
+    /* Padding */
+    .pb-#{$prefix}#{$size}x {
+      padding-bottom: #{$size}px !important;
+    }
+
+    .pt-#{$prefix}#{$size}x {
+      padding-top: #{$size}px !important;
+    }
+
+    .pr-#{$prefix}#{$size}x {
+      padding-right: #{$size}px !important;
+    }
+
+    .pl-#{$prefix}#{$size}x {
+      padding-left: #{$size}px !important;
+    }
+
+    .py-#{$prefix}#{$size}x {
+      padding-top: #{$size}px !important;
+      padding-bottom: #{$size}px !important;
+    }
+
+    .px-#{$prefix}#{$size}x {
+      padding-top: #{$size}px !important;
+      padding-bottom: #{$size}px !important;
+    }
+  }
+
+  @for $size from 0 to 20 {
+    .mb-#{$prefix}#{$size} {
+      margin-bottom: #{$size * 10}px !important;
+    }
+
+    .mt-#{$prefix}#{$size} {
+      margin-top: #{$size * 10}px !important;
+    }
+
+    .mr-#{$prefix}#{$size} {
+      margin-right: #{$size * 10}px !important;
+    }
+
+    .ml-#{$prefix}#{$size} {
+      margin-left: #{$size * 10}px !important;
+    }
+
+    .pb-#{$prefix}#{$size} {
+      margin-bottom: #{$size * 10}px !important;
+    }
+
+    .pt-#{$prefix}#{$size} {
+      margin-top: #{$size * 10}px !important;
+    }
+
+    .pr-#{$prefix}#{$size} {
+      margin-right: #{$size * 10}px !important;
+    }
+
+    .pl-#{$prefix}#{$size} {
+      margin-left: #{$size * 10}px !important;
+    }
+
+    .my-#{$prefix}#{$size} {
+      margin-top: #{$size * 10}px !important;
+      margin-bottom: #{$size * 10}px !important;
+    }
+
+    .mx-#{$prefix}#{$size} {
+      margin-left: #{$size * 10}px !important;
+      margin-right: #{$size * 10}px !important;
+    }
+
+    .px-#{$prefix}#{$size} {
+      padding-left: #{$size * 10}px !important;
+      padding-right: #{$size * 10}px !important;
+    }
+
+    .py-#{$prefix}#{$size} {
+      padding-top: #{$size * 10}px !important;
+      padding-bottom: #{$size * 10}px !important;
+    }
+
+    .p-#{$prefix}#{$size} {
+      padding: #{$size * 10}px !important;
+    }
+
+    .m-#{$prefix}#{$size} {
+      margin: #{$size * 10}px !important;
+    }
+  }
+}
+
+@include paddingMargin("");
+
+@include tablet {
+  @include paddingMargin("sm-");
+}
+
+@include pc {
+  @include paddingMargin("md-");
+}
+
+@include xl {
+  @include paddingMargin("lg-");
+}

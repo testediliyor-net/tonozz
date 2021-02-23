@@ -1,0 +1,15 @@
+.finance {
+  &-context {
+  }
+
+  &-item {
+    border-radius: 15px;
+    border: 1px solid $sky-blue;
+    box-shadow: 0 2px 10px -6px #000;
+
+    &-status {
+      background-color: $light-gray2;
+      border: 1px solid $sky-blue;
+    }
+  }
+}

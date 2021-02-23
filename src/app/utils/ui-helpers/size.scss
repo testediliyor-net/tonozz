@@ -1,0 +1,85 @@
+@mixin size($prefix: "") {
+  $i: 10;
+  @while $i <= 100 {
+    /*
+      Width
+      w-10    : 10%
+      w-sm-10
+      w-md-20
+      w-pc-30
+    */
+
+    .w-#{$prefix}#{$i} {
+      width: #{$i}#{"%"} !important;
+    }
+
+    .h-#{$prefix}#{$i} {
+      height: #{$i}#{"%"} !important;
+    }
+
+    /*
+      Width
+      w-10x   : 15%;
+      w-sm-10x
+      w-md-20x
+      w-pc-30x
+    */
+
+    /* 
+      Max Width 
+      mw-10x : max-width:100px;
+      ...
+      mw-90x : max-width:900px;
+    */
+    .mw-#{$prefix}#{$i}x {
+      max-width: #{$i * 10}px !important;
+      width: 100%;
+    }
+
+    @for $num from 1 to 9 {
+      .mw-#{$prefix}#{$i}x#{$num} {
+        max-width: #{$i * 10 + ($num * 10)}px !important;
+        width: 100%;
+      }
+    }
+
+    .mh-#{$prefix}#{$i}x1 {
+      max-height: #{$i * 10}px !important;
+      height: 100%;
+    }
+
+    $i: $i + 10;
+  }
+
+  @for $i from 1 to 251 {
+    .w-#{$prefix}#{$i}x {
+      width: #{$i}#{"px"} !important;
+    }
+
+    .h-#{$prefix}#{$i}x {
+      height: #{$i}#{"px"} !important;
+    }
+  }
+}
+
+@include size();
+
+@include tablet {
+  @include size("sm-");
+}
+
+@include pc {
+  @include size("md-");
+}
+
+@include lg {
+  @include size("pc-");
+}
+
+@include xl {
+  @include size("xl-");
+}
+
+.w-none {
+  width: auto !important;
+}

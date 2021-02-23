@@ -1,0 +1,23 @@
+<div class="blog-carousel relative">
+  <img src="assets/images/blog-image-cover.jpg" class="d-block w-100" alt="" />
+  <h1 class="position-xy-center position-absolute z-1 fs-2 fs-md-5 fw-bold">Blog Page</h1>
+</div>
+
+<div class="container">
+  <div class="blog-categories text-center my-2 py-2 my-md-4 py-md-4 fw-6">
+    <a href="#" class="p-2 color-gray-light fs-0x fs-sm-1x">Category 1</a>
+    <a href="#" class="p-2 color-gray-light fs-0x fs-sm-1x">Category 2</a>
+    <a href="#" class="p-2 color-gray-light fs-0x fs-sm-1x">Category 3</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blog-context px-sm-4">
+    <blog-item *ngFor="let data of datas" [data]="data"></blog-item>
+  </div>
+  <div class="text-center my-4">
+    <a href="#" class="button button-primary-dark py-1 py-sm-2 mb-3 px-6 fs-1x">View More</a>
+  </div>
+</div>
+<base-newsletter>
+</base-newsletter>

@@ -1,0 +1,50 @@
+.base-newsletter {
+  background-color: $light-gray3;
+}
+
+.subscribe-modal {
+  .modal-context {
+    max-width: 400px;
+    max-height: 453px;
+    margin: 20px auto;
+    width: calc(100% - 40px);
+    background: white;
+    display: flex;
+
+    .grid-group {
+      flex: 1;
+    }
+
+    .form-group {
+      button {
+        cursor: pointer;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@include pc {
+  .subscribe-modal {
+    .modal-context {
+      max-width: 895px;
+      max-height: 603px;
+      margin: 20px auto;
+      width: calc(100% - 40px);
+      height: calc(100% - 40px);
+      background: white;
+      display: flex;
+
+      .grid-group {
+        flex: 1;
+      }
+
+      .form-group {
+        button {
+          cursor: pointer;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

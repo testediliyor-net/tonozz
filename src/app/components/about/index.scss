@@ -1,0 +1,99 @@
+.about-page {
+  header,
+  .header-inner-menu {
+    display: none;
+  }
+
+  .about-header {
+    &-cover {
+      min-height: 400px;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  .about-header-menu {
+    a {
+      padding: 3px 10px;
+      position: relative;
+      text-align: center;
+
+      &:after {
+        content: "";
+        height: 2px;
+        background-color: white;
+        display: block;
+        margin-top: 10px;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        top: 20px;
+        left: 0;
+      }
+
+      &.active:after,
+      &:hover:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .about-section {
+    background: $light-gray3;
+  }
+
+  /* About Custom Grid */
+  .about-grid-container {
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  .about-big {
+    grid-area: about-big;
+  }
+
+  .right0 {
+    grid-area: right0;
+  }
+
+  .right1 {
+    grid-area: right1;
+  }
+
+  .left0 {
+    grid-area: left0;
+  }
+
+  .left1 {
+    grid-area: left1;
+  }
+
+  .left2 {
+    grid-area: left2;
+  }
+
+  .left3 {
+    grid-area: left3;
+  }
+}
+
+@include tablet {
+  .about-page {
+    .about-grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 15px;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 15px 15px;
+      grid-template-areas:
+        "about-big about-big right0"
+        "about-big about-big right1"
+        "left0 left1 right1"
+        "left2 left3 left3";
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<div class="blog-item">
+  <article class="color-gray">
+
+    <div class="blog-item-image">
+      <img [src]="data.imageURL" [alt]="data.title" class="w-100" />
+    </div>
+
+    <div class="blog-item-category fs-1 py-1 fw-6">
+      <span>{{data.category}}</span> | <span>{{data.date}}</span>
+    </div>
+
+    <div class="blog-item-title fs-1x fw-bold">
+      {{data.title}}
+    </div>
+
+    <div class="blog-item-description py-md-5">
+      <p>{{data.description}}</p>
+    </div>
+
+  </article>
+</div>

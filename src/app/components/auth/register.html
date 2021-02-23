@@ -1,0 +1,53 @@
+<div class="modal auth-modal">
+  <div class="modal-context">
+    <div class="modal-close">
+      <button (click)="closeModal()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="grid-group">
+      <div class="auth-modal-header mb-3">
+        <h1>Create An Account</h1>
+        <p class="fw-bold">Already an user? <a href="#" class="ml-1">Sign In</a></p>
+      </div>
+
+      <div class="auth-modal-form">
+        <div class="form-group-box grid grid-col-2 grid-col-gap-1 m-0 p-0">
+          <div class="form-group">
+            <input type="text" placeholder="First Name" />
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Last Name" />
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Email Address" />
+        </div>
+
+        <div class="form-group">
+          <input type="password" placeholder="Password" />
+        </div>
+
+        <div class="form-group">
+          <button>Sign Up</button>
+        </div>
+
+      </div>
+      <div class="auth-modal-other">
+
+        <p class="title my-3">Or Sign In With</p>
+
+        <div class="auth-modal-other-context">
+          <a href="#"><i class="fab fa-google"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="grid-group auth-modal-image">
+      <img src="assets/images/register-image.png" alt="" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="image-card">
+  <div class="remove-card" *ngIf="data.isVisibleHearth"><i class="fas fa-heart fs-2 text-hover-primary"></i></div>
+  <div class="image-card-header">
+    <div class="image-card-image">
+      <img [src]="data.image" [alt]="data.title" />
+    </div>
+    <div class="image-card-title fs-1 py-1">{{data.title}}</div>
+  </div>
+  <div class="image-card-content flex">
+    <div class="card-user flex align-center" *ngIf="data.isVisibleUser">
+      <img [src]='data.userImage' [alt]="data.userName" />
+      <label class="fs-1 color-secondary">{{data.userName}}</label>
+    </div>
+  </div>
+  <div class="image-card-footer px-2 py-1 align-center">
+    <i class="far fa-heart fs-1x"></i>
+    <span class="fs-1x">{{data.price}}</span>
+  </div>
+</div>

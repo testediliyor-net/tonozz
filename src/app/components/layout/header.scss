@@ -1,0 +1,464 @@
+header {
+  position: relative;
+  background-image: url("~src/assets/images/base/yacht-at-the-sea-aerial-view-of-luxury-floating-sh-PRCLWC6.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top;
+  min-height: 150px;
+  width: 100%;
+  display: block;
+  z-index: 9;
+}
+
+.search-filter-container,
+.home-arrow-down {
+  display: none;
+}
+
+.home-page-view {
+  header {
+    min-height: 100vh;
+    background-position: left top;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+
+      .search-filter-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+      }
+
+      .home-arrow-down {
+        display: block;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+        padding: 30px 0;
+
+        i {
+          width: 60px;
+          height: 60px;
+          border-radius: 10px;
+          border: 2px solid white;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: 0.3s;
+
+          &:hover {
+            background: white;
+            color: $sky-blue;
+          }
+        }
+      }
+    }
+
+    /*
+    Search Filter
+    */
+    .search-filter {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      height: auto;
+      row-gap: 2px;
+      width: 100%;
+
+      .sf-item {
+        background: white;
+        padding: 0 20px;
+
+        i {
+          font-size: 20px;
+        }
+
+        &:first-child {
+          border-radius: 5px 5px 0 0;
+        }
+
+        &:last-child {
+          border-radius: 0 0 5px 5px;
+        }
+
+        input,
+        select,
+        button {
+          border: 0;
+          font-size: 22px;
+          padding: 0 5px;
+        }
+      }
+
+      .sf-dropdown {
+        .dropdown-selected {
+          color: $sky-blue;
+          padding: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .dropdown-list {
+          border-radius: 0 0 10px 10px;
+          div {
+            padding: 10px 20px 10px 30px;
+            transition: 0.3s;
+
+            &:hover {
+              background-color: $sky-blue;
+              color: white;
+            }
+          }
+        }
+      }
+
+      .sf-button {
+        padding: 0;
+        overflow: hidden;
+
+        button {
+          border: 0;
+          height: 100%;
+          border-radius: 0;
+          padding: initial;
+          width: 100%;
+        }
+      }
+
+      .sf-input {
+        display: flex;
+        align-items: center;
+
+        label {
+          font-size: 22px;
+          color: $sky-blue;
+          pointer-events: none;
+        }
+
+        .sf-input-field {
+          height: 100%;
+          flex: 1;
+
+          input {
+            width: 100%;
+            height: 100%;
+            padding: 12px 12px 6px 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header {
+  &-context {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+
+  &-logo {
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      height: 85px;
+    }
+  }
+
+  &-search {
+    flex: 1;
+
+    &-input {
+      input {
+        width: 100%;
+        min-height: 44px;
+      }
+    }
+  }
+
+  &-inner-menu {
+    position: relative;
+    border: 1px solid $sky-blue;
+    z-index: 10;
+
+    &-context {
+      display: flex;
+      justify-content: center;
+
+      a {
+        padding: 0 8px;
+        color: $sky-blue;
+        font-weight: bold;
+        transition: 0.3s;
+        white-space: nowrap;
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+
+    /*
+User Opened Modal
+*/
+    .user-modal {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: white;
+      border: 1px solid $sky-blue;
+      border-top: 0;
+      border-radius: 0 0 20px 20px;
+      padding: 20px 35px;
+      box-shadow: 0 0 10px -4px #000;
+
+      a {
+        display: block;
+        padding: 4px 0;
+        transition: 0.3s;
+
+        i {
+          font-size: 26px;
+          color: $sky-blue;
+          margin-right: 5px;
+          min-width: 46px;
+        }
+
+        label {
+          color: $dark-gray2;
+          font-weight: bold;
+          pointer-events: none;
+        }
+
+        &:hover label {
+          color: $sky-blue;
+        }
+      }
+    }
+  }
+
+  /*
+    Header Base Content
+  */
+  &-base-content {
+    ul {
+      display: flex;
+      margin-top: 20px;
+
+      li {
+        margin: 0 10px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          display: block;
+          font-family: $font-lee;
+          font-weight: bold;
+          color: #ffffff;
+          text-shadow: 0px 5px 10px #00000029;
+          white-space: nowrap;
+          @extend .text-hover-primary;
+        }
+      }
+    }
+  }
+
+  /*
+    User Base Menu
+  */
+
+  &-user-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    .header-controls {
+      display: flex;
+      padding-top: 10px;
+
+      a {
+        @extend .color-hover;
+      }
+
+      i {
+        color: white;
+        font-size: 2.3rem;
+      }
+
+      .user-alerts {
+        i {
+          padding-top: 2px;
+        }
+      }
+
+      .user-messages {
+        i {
+          font-size: 2.1rem;
+          padding-top: 2px;
+        }
+      }
+
+      .user-panel {
+        position: relative;
+
+        a {
+          display: flex;
+          align-items: center;
+
+          @extend .color-hover;
+
+          img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            border: 1px solid $sky-blue;
+            text-transform: uppercase;
+            object-fit: cover;
+          }
+
+          label {
+            padding: 0 10px;
+            color: white;
+            font-size: 26px;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: bold;
+            max-width: 200px;
+            white-space: nowrap;
+          }
+
+          i {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .header-search {
+      &-input {
+        position: relative;
+        flex: 1;
+
+        input {
+          width: 100%;
+          font-size: 17px;
+          padding: 15px 20px;
+          border-radius: 5px;
+          border: 0;
+        }
+
+        i {
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 40px;
+  background: $sky-blue;
+  z-index: 101;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  &-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+    button {
+      background: none;
+      border: 0;
+      cursor: pointer;
+    }
+  }
+
+  &-context {
+    position: relative;
+
+    ul {
+      li {
+        margin: 10px 0;
+        a {
+          display: block;
+          text-align: center;
+          font-size: 2rem;
+          font-weight: bold;
+          color: white !important;
+        }
+      }
+    }
+  }
+}
+
+@include pc {
+  .header {
+    &-inner-menu {
+      a {
+        padding: 0 15px;
+      }
+    }
+    &-base-content {
+      ul {
+        li {
+          margin: 0 20px;
+        }
+      }
+    }
+  }
+
+  header {
+    background-position: left -190px;
+  }
+}
+
+@include pc {
+  .home-page-view {
+    header {
+      .search-filter {
+        grid-template-columns: 250px 1fr 1fr 180px;
+        grid-template-rows: none;
+        height: 64px;
+        column-gap: 2px;
+
+        .sf-dropdown .dropdown-selected {
+          padding: 0 10px;
+        }
+
+        .sf-item {
+          &:first-child {
+            border-radius: 10px 0 0 10px;
+          }
+
+          &:last-child {
+            border-radius: 0 10px 10px 0;
+          }
+        }
+      }
+    }
+  }
+}

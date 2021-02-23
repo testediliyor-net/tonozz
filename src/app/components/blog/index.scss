@@ -1,0 +1,52 @@
+.blog-page {
+  .header-inner-menu {
+    display: none;
+  }
+
+  .blog-carousel {
+    img {
+      min-height: 300px;
+      object-fit: cover;
+    }
+  }
+
+  .blog {
+    &-context {
+      --gap-size: 25px;
+      column-count: 1;
+      column-gap: var(--gap-size);
+      row-gap: var(--gap-size);
+    }
+
+    &-item {
+      break-inside: avoid;
+    }
+  }
+}
+
+@include tablet {
+  .blog-page {
+    .blog {
+      &-context {
+        --gap-size: 25px;
+        column-count: 2;
+        column-gap: var(--gap-size);
+        row-gap: var(--gap-size);
+        column-fill: auto;
+      }
+    }
+  }
+}
+
+@include pc {
+  .blog-page {
+    .blog {
+      &-context {
+        --gap-size: 25px;
+        column-count: 3;
+        column-gap: var(--gap-size);
+        row-gap: var(--gap-size);
+      }
+    }
+  }
+}

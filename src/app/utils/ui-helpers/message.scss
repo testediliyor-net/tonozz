@@ -1,0 +1,13 @@
+.message {
+  padding: 4px 0;
+  font-size: 1rem;
+  margin: 3px 0;
+
+  &-success {
+    color: $sky-blue;
+  }
+
+  &-error {
+    color: rgb(179, 14, 14);
+  }
+}

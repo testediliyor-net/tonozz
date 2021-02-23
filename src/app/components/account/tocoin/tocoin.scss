@@ -1,0 +1,44 @@
+.tocoin {
+  &-context {
+    border: 1px solid $dark-gray3;
+    border-radius: 15px;
+    background-color: $light-gray;
+    display: grid;
+    grid-template-columns: 240px 1fr 1fr;
+  }
+
+  &-title {
+    color: $sky-blue;
+  }
+
+  &-point {
+    color: $dark-gray2;
+
+    i {
+      color: $sky-blue;
+    }
+  }
+
+  &-info {
+    h2,
+    p {
+      color: $dark-gray2;
+    }
+    h2 {
+      letter-spacing: -1px;
+    }
+  }
+
+  &-item {
+    flex: 1;
+  }
+
+  &-new-post {
+    a {
+      padding: 20px 40px;
+      border: 1px solid $sky-blue;
+      color: $sky-blue;
+      border-radius: 20px;
+    }
+  }
+}
