@@ -11,6 +11,7 @@
     "dev:ssr": "ng run tonozz:serve-ssr",
     "serve:ssr": "node dist/tonozz/server/main.js",
     "build:ssr": "ng build --prod && ng run tonozz:server:production",
+    "heroku-postbuild":"ng run build:ssr",
     "prerender": "ng run tonozz:prerender"
   },
   "private": true,
