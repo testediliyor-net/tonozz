@@ -2,6 +2,7 @@
   "name": "tonozz",
   "version": "0.0.0",
   "scripts": {
+    "start:heroku": "node dist/server",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -11,7 +12,8 @@
     "dev:ssr": "ng run tonozz:serve-ssr",
     "serve:ssr": "node dist/tonozz/server/main.js",
     "build:ssr": "ng build --prod && ng run tonozz:server:production",
-    "heroku-postbuild": "ng run build:ssr",
+    "heroku-postbuild": "npm run build:ssr",
+    "postinstall": "npm run build:ssr",
     "prerender": "ng run tonozz:prerender"
   },
   "private": true,
