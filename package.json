@@ -2,7 +2,6 @@
   "name": "tonozz",
   "version": "0.0.0",
   "scripts": {
-    "start:heroku": "node dist/server",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
