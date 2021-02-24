@@ -11,7 +11,7 @@
     "dev:ssr": "ng run tonozz:serve-ssr",
     "serve:ssr": "node dist/tonozz/server/main.js",
     "build:ssr": "ng build --prod && ng run tonozz:server:production",
-    "heroku-postbuild":"ng run build:ssr",
+    "heroku-postbuild": "ng run build:ssr",
     "prerender": "ng run tonozz:prerender"
   },
   "private": true,
@@ -55,5 +55,9 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
+  },
+  "engines": {
+    "node": "12.18.2",
+    "npm": "6.14.5"
   }
 }
