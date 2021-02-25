@@ -1,4 +1,4 @@
-@import './detail';
+@import "./detail";
 
 .services-view-page {
   .services-header {
@@ -21,6 +21,7 @@
     .image-card {
       position: relative;
       border: 1px solid $sky-blue;
+      cursor: pointer;
 
       .remove-services {
         position: absolute;
