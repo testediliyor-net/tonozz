@@ -3,13 +3,14 @@
     display: flex;
   }
 
+  &-quick-menu{
+  }
+
   &-menu {
     max-width: 360px;
-    flex: 1;
+    padding-right: 70px;
 
     &-context {
-      max-width: 227px;
-
       a {
         display: block;
         font-size: 1rem;
@@ -33,6 +34,19 @@
     &-title {
       color: $dark-gray2;
       font-size: 25px;
+    }
+  }
+}
+
+@include lg {
+  .account {
+    &-menu {
+      flex: 1;
+      padding-right: 0;
+
+      &-context {
+        max-width: 227px;
+      }
     }
   }
 }

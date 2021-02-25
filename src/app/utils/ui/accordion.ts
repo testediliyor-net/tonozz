@@ -1,5 +1,4 @@
-import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, ElementRef, Input, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import * as EventEmitter from 'events';
+import { Component, Input} from '@angular/core';
 
 export interface AccordionData {
   title: string;

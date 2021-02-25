@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 
 export interface IDropdown {
@@ -13,8 +13,10 @@ export interface IDropdown {
       <div class="dropdown-selected" [ngClass]="selectedClass">{{selectedItem.label}}<i class="{{icon}}"></i></div>
       <input type="checkbox" [(ngModel)]="checked"/>
     </label>
-      <div class="dropdown-list" *ngIf="checked">
+      <div class="dropdown-list" *ngIf="checked" #items>
         <div *ngFor="let data of datas; let i = index" (mousedown)="change(data, i)">{{data.label}}</div>
+        <ng-content>
+        </ng-content>
       </div>
   `
 })
@@ -25,10 +27,12 @@ export class Dropdown implements OnInit {
   @Input() value: string;
   @Input() datas: IDropdown[];
   @Input() selectedClass: string;
-  selectedItem: IDropdown;
+  @Input() selectedItem: IDropdown;
   checked: boolean = false;
+  @ViewChild('items') items: ElementRef;
 
   constructor() { }
+
 
   toggleModal(value: boolean = false) {
     this.checked = value || false;
@@ -64,7 +68,7 @@ export class Dropdown implements OnInit {
     }
 
     /**  Run if no default value */
-    else {
+    else if (this.datas) {
       this.change(this.datas[0], 0);
     }
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IDropdown } from 'src/app/utils/ui/dropdown';
 import { ImageCardData } from '../../base/components/image-card';
 
 @Component({
@@ -9,10 +10,11 @@ import { ImageCardData } from '../../base/components/image-card';
 export class AccountLayout implements OnInit {
 
   populer_datas: ImageCardData[];
-
+  quickMenuSelectedItem: IDropdown;
   constructor() { }
 
   ngOnInit() {
+    this.quickMenuSelectedItem = <IDropdown>{ label: 'Quick Menu', value: '' };
     this.populer_datas = <ImageCardData[]>[
       {
         isVisibleUser: true,

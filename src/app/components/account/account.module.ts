@@ -11,18 +11,20 @@ import { AccountFinance } from './finance/finance';
 import { AccountSales } from './sales/sales';
 import { AccountPosts } from './posts/posts';
 import { SharedModule } from 'src/app/shared.module';
+import { GuardServiceDemo } from 'src/app/services/auth/guard';
 
 const routes: Routes = [
   {
     path: '',
     component: AccountLayout,
+    canActivate: [GuardServiceDemo],
     children: [
       {
         path: '',
         component: AccountHome,
         data: {
           bodyClass: 'account-index',
-        }
+        },
       },
       {
         path: 'orders',
@@ -96,7 +98,7 @@ const routes: Routes = [
     AccountFavorites,
     AccountFinance,
     AccountSales,
-    AccountPosts,
+    AccountPosts, AccountRequests
   ],
 
   exports: [RouterModule]

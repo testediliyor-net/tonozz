@@ -11,6 +11,9 @@ export class HeaderComponent implements OnInit {
   isOpenUserModal: boolean;
   isOpenLoginModal: boolean;
   isOpenRegisterModal: boolean;
+  get isAuth() {
+    return AppComponent.isAuthStatic;
+  }
 
   openLoginModal(status: boolean) {
     this.isOpenLoginModal = status;

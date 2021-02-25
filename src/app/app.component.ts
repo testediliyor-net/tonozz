@@ -12,7 +12,9 @@ import { isPlatformBrowser } from '@angular/common';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
+  static isAuthStatic: boolean;
   static isBrowser = new BehaviorSubject<boolean>(null);
+
   constructor(@Inject(PLATFORM_ID) private platformId: any,
     public translateService: TranslateService,
     private router: Router

@@ -1,5 +1,33 @@
 <div class="container px-sm-3">
+  <div class="d-md-none">
+    <!-- Quick Menu -->
+    <div dropdown class="account-quick-menu dropdown fs-1 fs-md-1x bordered my-3 radius-5x"
+      [selectedItem]="quickMenuSelectedItem">
+      <div [routerLink]='["/account"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        (click)="quickMenuSelectedItem = {label:'Tonozz'}">Tonozz</div>
+      <div [routerLink]='["orders"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        (click)="quickMenuSelectedItem = {label:'My Orders'}">My Orders</div>
+      <div [routerLink]='["requests"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="quickMenuSelectedItem = {label:'My Special
+      Requests'}">My Special
+        Requests</div>
+      <div [routerLink]='["favorites"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="quickMenuSelectedItem = {label:'My
+      Favorites'}">My
+        Favorites</div>
+      <div [routerLink]='["finance"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        (click)="quickMenuSelectedItem = {label:'Finance'}">Finance</div>
+      <div [routerLink]='["sales"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        (click)="quickMenuSelectedItem = {label:'My Sales'}">My Sales</div>
+      <div [routerLink]='["posts"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        (click)="quickMenuSelectedItem = {label:'My Posts'}">My Posts</div>
+      <div [routerLink]='["tocoin"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        (click)="quickMenuSelectedItem = {label:'My Tocoin
+        Account'}">My Tocoin
+        Account</div>
+    </div>
+  </div>
+
   <div class="account-container py-3 py-md-10">
+    <!-- Account Menu Start -->
     <div class="account-menu d-none flex-md ">
       <div class="account-menu-context">
         <a [routerLink]='["/account"]' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Tonozz</a>
@@ -15,20 +43,22 @@
           Account</a>
       </div>
     </div>
+
+    <!-- Account Content Start -->
     <div class="account-content">
       <router-outlet></router-outlet>
     </div>
 
   </div>
   <!-- En populer hizmetler-->
-  <div class="seperator"></div>
+  <div class="seperator my-1 my-md-3"></div>
   <div class="account-populer mb-4">
     <div class="flex-sm">
       <div class="mw-30x6 d-none d-md-block">
 
       </div>
       <div>
-        <h1 class="fs-2 color-gray-light mb-4">En Popüler Hizmetler</h1>
+        <h1 class="fs-1x fs-sm-2 color-gray-light mb-4">En Popüler Hizmetler</h1>
         <div class="grid grid-col-1 grid-sm-col-2 grid-pc-col-3 grid-col-gap-2">
           <image-card *ngFor="let pop of populer_datas" class="mb-2" [data]="pop"></image-card>
         </div>

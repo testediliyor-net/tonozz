@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'services',
@@ -11,7 +12,11 @@ export class ServicesComponent implements OnInit {
   categories: any[];
   serviceCategoryDatas: any[];
 
-  constructor() {
+  constructor(private router: Router) {
+  }
+
+  showDetail() {
+    this.router.navigate(['services/', 10])
   }
 
   ngOnInit(): void {

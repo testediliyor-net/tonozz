@@ -11,9 +11,9 @@
     position: absolute;
     left: 50%;
     top: 50%;
+    max-width: 895px;
+    max-height: 603px;
     transform: translate(-50%, -50%);
-    max-width: 600px;
-    max-height: 500px;
     border: 2px solid $sky-blue;
     box-shadow: 10px 10px 0 -2px rgba(black, 0.3);
     padding: 30px;
@@ -21,8 +21,8 @@
 
   &-close {
     position: absolute;
-    right: 30px;
-    top: 30px;
+    right: 10px;
+    top: 10px;
     border: 2px solid $sky-blue;
     border-radius: 50%;
 
@@ -48,9 +48,12 @@
   }
 }
 
-@include pc {
+@include tablet {
   .modal {
     &-close {
+      right: 30px;
+      top: 30px;
+
       button {
         width: 50px;
         height: 50px;

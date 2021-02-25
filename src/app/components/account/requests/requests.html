@@ -2,98 +2,65 @@
     <h1 class="mb-3 account-content-title">Özel Alıcı İsteği Oluştur</h1>
     <div class="requests-context">
 
-        <div class="requests-new-form py-3 px-5">
-            <div class="requests-form-item mb-2 flex align-center w-100">
-                <label class="mr-2 fs-1 fw-bold">Category</label>
+        <div class="requests-new-form py-3 px-3 px-md-5">
+            <div class="requests-form-item mb-2 flex flex-column flex-md-row align-md-center w-100">
+                <label class="mr-2 mb-1 fs-1 fw-bold">Category</label>
                 <div class="form-group mb-0 with-icon">
                     <input type="text" placeholder="Search" /> <i class="fas fa-search fs-1x"></i>
                 </div>
             </div>
-            <div class="requests-form-item mb-2 flex align-center w-100">
-                <label class="mr-2 fs-1 fw-bold">Description</label>
+            <div class="requests-form-item mb-2 flex flex-column flex-md-row align-md-center w-100">
+                <label class="mr-2 mb-1 fs-1 fw-bold">Description</label>
                 <div class="form-group mb-0 w-100">
                     <input type="text" placeholder="" />
                 </div>
             </div>
-            <div class="requests-form-item flex align-center w-100">
-                <label class="mr-2 fs-1 fw-bold">Price</label>
+            <div class="requests-form-item flex flex-column flex-md-row align-md-center w-100">
+                <label class="mr-2 mb-1 fs-1 fw-bold">Price</label>
                 <div class="flex w-100">
-                    <div class="form-group mb-0 mr-2">
+                    <div class="form-group mb-0 mr-2 mb-2 mb-md-0">
                         <input type="text" placeholder="Min" />
                     </div>
-                    <div class="form-group mb-0 mr-2">
+                    <div class="form-group mb-0 mr-md-2">
                         <input type="text" placeholder="Max" />
                     </div>
-                    <div class="form-group mb-0 w-100 text-right flex align-center justify-end">
-                        <a href="#" class="requests-new-btn fs-1x fw-bold color-primary hover-underline">New
-                            Request</a>
-                    </div>
+                </div>
+                <div class="form-group mb-0 w-100 text-right flex align-center mt-2 mt-md-0 justify-md-end">
+                    <a href="#" class="requests-new-btn fs-1x fw-bold color-primary hover-underline">New
+                        Request</a>
                 </div>
             </div>
         </div>
         <div class="seperator bg-color-primary"></div>
         <h1 class="mb-3 account-content-title">Özel Alıcı İstekleri</h1>
         <div class="requests-posts">
-            <div class="requests-post">
-                <div class="requests-post-header flex align-center py-1 color-secondary">
-                    <div class="requests-post-user pr-3">
-                        <img src="assets/images/users/user-image.jpg" alt="" />
+            <div *ngFor="let i of [1,2,3]; let n = index;">
+                <div class="requests-post">
+                    <div class="requests-post-header flex align-center py-1 color-secondary">
+                        <div class="requests-post-user pr-3">
+                            <img src="assets/images/users/user-image.jpg" alt="" />
+                        </div>
+                        <div class="flex flex-column flex-sm-row flex-auto">
+                            <div class="flex-auto fs-1 fs-sm-1x">Username</div>
+                            <div class="flex-auto fs-1 fs-sm-1x">Category Name</div>
+                            <div class="fs-1 fs-sm-1x">Price</div>
+                        </div>
                     </div>
-                    <div class="flex-auto fs-1x">Kullanıcı Adı</div>
-                    <div class="flex-auto fs-1x">Kategori Adı</div>
-                    <div class="fs-1x">Fiyat</div>
-                </div>
-                <div class="request-post-content color-secondary">
-                    <p class="fs-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. hasellus venenatis felis eu
-                        sollicitudin bibendum. Etiam lutpat pretium lorem, quis mollis dolor pretium vitae.Lorem ipsum
-                        dolor sit amet, consectetur adipiscing elit. asellus venenatis felis eu sollicitudin bibendum.
-                        Etiam olutpat pretium lorem, quis mollis dolor pretium vitae.</p>
-                    <div class="text-right">
-                        <a href="#" class="color-primary hover-underline fw-bold">Teklif ver</a>
+                    <div class="request-post-content color-secondary">
+                        <p class="fs-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. hasellus venenatis
+                            felis eu
+                            sollicitudin bibendum. Etiam lutpat pretium lorem, quis mollis dolor pretium vitae.Lorem
+                            ipsum
+                            dolor sit amet, consectetur adipiscing elit. asellus venenatis felis eu sollicitudin
+                            bibendum.
+                            Etiam olutpat pretium lorem, quis mollis dolor pretium vitae.</p>
+                        <div class="text-md-right">
+                            <a href="#" class="color-primary hover-underline fw-bold">Teklif ver</a>
+                        </div>
                     </div>
                 </div>
+                <div class="seperator bg-color-primary my-2" *ngIf="n < 2"></div>
             </div>
-            <div class="seperator bg-color-primary my-2"></div>
-            <div class="requests-post">
-                <div class="requests-post-header flex align-center py-1 color-secondary">
-                    <div class="requests-post-user pr-3">
-                        <img src="assets/images/users/user-image.jpg" alt="" />
-                    </div>
-                    <div class="flex-auto fs-1x">Kullanıcı Adı</div>
-                    <div class="flex-auto fs-1x">Kategori Adı</div>
-                    <div class="fs-1x">Fiyat</div>
-                </div>
-                <div class="request-post-content color-secondary">
-                    <p class="fs-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. hasellus venenatis felis eu
-                        sollicitudin bibendum. Etiam lutpat pretium lorem, quis mollis dolor pretium vitae.Lorem ipsum
-                        dolor sit amet, consectetur adipiscing elit. asellus venenatis felis eu sollicitudin bibendum.
-                        Etiam olutpat pretium lorem, quis mollis dolor pretium vitae.</p>
-                    <div class="text-right">
-                        <a href="#" class="color-primary hover-underline fw-bold">Teklif ver</a>
-                    </div>
-                </div>
-            </div>
-            <div class="seperator bg-color-primary my-2"></div>
-            <div class="requests-post">
-                <div class="requests-post-header flex align-center py-1 color-secondary">
-                    <div class="requests-post-user pr-3">
-                        <img src="assets/images/users/user-image.jpg" alt="" />
-                    </div>
-                    <div class="flex-auto fs-1x">Kullanıcı Adı</div>
-                    <div class="flex-auto fs-1x">Kategori Adı</div>
-                    <div class="fs-1x">Fiyat</div>
-                </div>
-                <div class="request-post-content color-secondary">
-                    <p class="fs-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. hasellus venenatis felis eu
-                        sollicitudin bibendum. Etiam lutpat pretium lorem, quis mollis dolor pretium vitae.Lorem ipsum
-                        dolor sit amet, consectetur adipiscing elit. asellus venenatis felis eu sollicitudin bibendum.
-                        Etiam olutpat pretium lorem, quis mollis dolor pretium vitae.</p>
-                    <div class="text-right">
-                        <a href="#" class="color-primary hover-underline fw-bold">Teklif ver</a>
-                    </div>
-                </div>
-            </div>
-            <div class="seperator bg-color-primary my-2"></div>
         </div>
     </div>
 </div>

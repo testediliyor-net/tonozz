@@ -1,10 +1,10 @@
 .auth-modal {
   .modal-context {
-    min-width: 895px;
-    min-height: 603px;
+    width: calc(100% - 25px);
+    height: calc(100% - 25px);
     background: white;
     display: flex;
-    padding: 50px 50px 50px 80px;
+    padding: 30px 10px;
 
     .grid-group {
       flex: 1;
@@ -48,12 +48,13 @@
       &-context {
         display: flex;
         align-items: center;
+        justify-content: center;
 
         a {
           margin: 0 10px;
           border-radius: 50%;
-          width: 50px;
-          height: 50px;
+          width: 45px;
+          height: 45px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -71,7 +72,7 @@
 
     .auth-modal-image {
       flex: 2;
-      display: flex;
+      display: none;
       justify-content: center;
       align-items: center;
 
@@ -86,6 +87,27 @@
         font-weight: bold;
         color: white;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .auth-modal {
+    .modal-context {
+      padding: 50px 50px 50px 80px;
+      .auth-modal-image {
+        display: flex;
+      }
+
+      .auth-modal-other {
+        &-context {
+          justify-content: flex-start;
+          a {
+            width: 50px;
+            height: 50px;
+          }
+        }
       }
     }
   }

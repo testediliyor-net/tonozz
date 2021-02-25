@@ -24,24 +24,27 @@
   }
 
   &-form-item {
-    label {
-      min-width: 120px;
-    }
-
-    &:first-child {
-      input {
-        width: 300px;
-      }
-    }
-
     &:nth-child(2) {
       input {
         width: 100%;
       }
     }
+  }
+}
 
-    &:last-child {
-      input {
+@include mobile {
+  .requests {
+    &-form-item {
+      &:first-child {
+        input {
+          width: 300px;
+        }
+      }
+      label {
+        min-width: 120px;
+      }
+
+      &:last-child input {
         width: 140px;
       }
     }

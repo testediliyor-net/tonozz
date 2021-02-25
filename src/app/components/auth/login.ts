@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'login-modal',
@@ -14,7 +16,13 @@ export class LoginComponent implements OnInit {
     this.onOpen.emit(false);
   }
 
-  constructor() {
+  constructor(private router: Router) {
+  }
+
+  onLogin() {
+    AppComponent.isAuthStatic = true;
+    this.router.navigate(['account']);
+    this.closeModal();
   }
 
   ngOnInit() {
