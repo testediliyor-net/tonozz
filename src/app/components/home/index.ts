@@ -6,6 +6,8 @@ import { AppComponent } from 'src/app/app.component';
   templateUrl: './index.html'
 })
 export class HomeComponent implements OnInit {
+
+
   ngOnInit() {
     AppComponent.isAuthStatic = false;
   }

@@ -1,5 +1,5 @@
 <header>
-  <div class="container">
+  <div class="container relative">
     <div class="header-context" [ngClass]="{'flex-column flex-sm-row':isAuth}">
       <!--
         Tonozz Logo
@@ -27,7 +27,7 @@
           <div class="user-alerts"><a href="#" class="px-1 px-sm-2"><i class="fas fa-bell"></i></a></div>
           <div class="user-panel" (window:mouseup)="isOpenUserModal = false">
             <div class="user-login">
-              <a (click)="isOpenUserModal=!isOpenUserModal">
+              <a href="javascript:;" (click)="isOpenUserModal=!isOpenUserModal">
                 <img src="assets/images/users/user-image.jpg" alt="" />
                 <label [ngClass]="{'d-none d-md-block':isAuth}">John Smith Moonlight</label>
                 <i class="fas ml-1" [ngClass]="isOpenUserModal ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
@@ -45,12 +45,13 @@
           <li><a href="#">JOB OFFERS</a></li>
           <li><a [routerLink]="['blog']">BLOG</a></li>
           <li><a href="#">CONTACT</a></li>
-          <li><a (click)="openLoginModal(true)">LOGIN</a></li>
-          <li><a (click)="openRegisterModal(true)" class="color-primary">SIGN UP</a></li>
+          <li><a (click)="openLoginRegister('login')">LOGIN</a></li>
+          <li><a (click)="openLoginRegister('register')" class="color-primary">SIGN UP</a></li>
         </ul>
         <button class="d-sm-none py-1 fs-2 button button-transparent cursor mh-30x"
           (click)="isVisibleMobileMenu = !isVisibleMobileMenu"><i class="fas fa-bars"></i></button>
       </div>
+      
     </div>
     <div class="search-filter-container">
       <div class="search-filter">
@@ -77,6 +78,12 @@
     <div class="home-arrow-down">
       <i class="fas fa-chevron-down" (click)="scrollDown()"></i>
     </div>
+    <div class="user-modal" [ngClass]="isOpenUserModal ? '':'d-none'">
+      <a [routerLink]="['account/settings/general']"><i class="far fa-id-card"></i> <label>Profile</label></a>
+      <a [routerLink]="['account']"><i class="fas fa-cog"></i> <label>Account</label></a>
+      <a href="#"><i class="fas fa-question-circle"></i> <label>Help</label></a>
+      <a href="#"><i class="fas fa-door-open"></i> <label>Exit</label></a>
+    </div>
   </div>
 </header>
 
@@ -94,7 +101,8 @@
       <li><a [routerLink]="['blog']" (click)="isVisibleMobileMenu = !isVisibleMobileMenu">BLOG</a></li>
       <li><a [routerLink]="['']" (click)="isVisibleMobileMenu = !isVisibleMobileMenu">CONTACT</a></li>
       <li><a (click)="openLoginModal(true); isVisibleMobileMenu = !isVisibleMobileMenu">LOGIN</a></li>
-      <li><a (click)="openRegisterModal(true); isVisibleMobileMenu = !isVisibleMobileMenu" class="color-primary">SIGN UP</a></li>
+      <li><a (click)="openRegisterModal(true); isVisibleMobileMenu = !isVisibleMobileMenu" class="color-primary">SIGN
+          UP</a></li>
     </ul>
   </div>
 </div>
@@ -107,14 +115,7 @@
       <a [routerLink]="['blog']">BLOG</a>
       <a [routerLink]="['contact']">CONTACT</a>
     </div>
-    <div class="user-modal" [ngClass]="isOpenUserModal ? '':'d-none'">
-      <a href="#"><i class="far fa-id-card"></i> <label>Profile</label></a>
-      <a [routerLink]="['account']"><i class="fas fa-cog"></i> <label>Account</label></a>
-      <a href="#"><i class="fas fa-question-circle"></i> <label>Help</label></a>
-      <a href="#"><i class="fas fa-door-open"></i> <label>Exit</label></a>
-    </div>
   </div>
 </div>
-
-<login-modal *ngIf="isOpenLoginModal" (onOpen)="openLoginModal($event)"></login-modal>
-<register-modal *ngIf="isOpenRegisterModal" (onOpen)="openRegisterModal($event)"></register-modal>
+<login-modal *ngIf="isOpenLoginModal" (onOpen)="openLoginRegister($event)"></login-modal>
+<register-modal *ngIf="isOpenRegisterModal" (onOpen)="openLoginRegister($event)"></register-modal>

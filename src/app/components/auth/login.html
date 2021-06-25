@@ -4,49 +4,58 @@
       <button (click)="closeModal()"><i class="fas fa-times"></i></button>
     </div>
 
-    <div class="grid-group">
-      <div class="auth-modal-header mb-3">
-        <h1>Sign In</h1>
-        <p class="fw-bold">New user? <a href="#" class="ml-1">Create an account</a></p>
+    <form [formGroup]="form" (ngSubmit)="onLogin()">
+      <div class="grid-group">
+        <div class="auth-modal-header mb-3">
+          <h1>Sign In</h1>
+          <p class="fw-bold">New user? <a href="#" class="ml-1" (click)="openModal()">Create an account</a></p>
+        </div>
+
+        <div class="auth-modal-form">
+          <div class="form-group">
+            <input type="text" formControlName="email" placeholder="email" />
+            <label *ngIf="submitted && f.email.errors && f.email.errors.required" class="error invalid-feedback">
+              Email is required
+            </label>
+          </div>
+
+          <div class="form-group">
+            <input type="password" formControlName="password" placeholder="Password" />
+            <label *ngIf="submitted && f.password.errors && f.password.errors.required" class="error invalid-feedback">
+              Password is required
+            </label>
+          </div>
+
+          <div class="form-group input-checkbox fw-bold py-1 mb-0">
+            <span>
+              <input type="checkbox" id="rememberme" formControlName="rememberme" />
+              <i class="fas fa-check"></i>
+            </span>
+
+            <label for="rememberme">Keep me signed in</label>
+          </div>
+          <div class="py-2" *ngIf="isError" >
+            <label class="error">{{invalidText}}</label>
+          </div>
+          <div class="form-group">
+            <button>Sign In</button>
+          </div>
+
+        </div>
+        <div class="auth-modal-other">
+
+          <p class="title my-3">Or Sign In With</p>
+
+          <div class="auth-modal-other-context">
+            <a href="#"><i class="fab fa-google"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+
+        </div>
       </div>
-
-      <div class="auth-modal-form">
-        <div class="form-group">
-          <input type="text" placeholder="Username or email" />
-        </div>
-
-        <div class="form-group">
-          <input type="password" placeholder="Password" />
-        </div>
-
-        <div class="form-group input-checkbox fw-bold py-1">
-          <span>
-            <input type="checkbox" id="rememberme" />
-            <i class="fas fa-check"></i>
-          </span>
-
-          <label for="rememberme">Keep me signed in</label>
-        </div>
-
-        <div class="form-group">
-          <button (click)="onLogin()">Sign In</button>
-        </div>
-
-      </div>
-      <div class="auth-modal-other">
-
-        <p class="title my-3">Or Sign In With</p>
-
-        <div class="auth-modal-other-context">
-          <a href="#"><i class="fab fa-google"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-
-      </div>
-    </div>
-
+    </form>
     <div class="grid-group auth-modal-image">
       <img src="assets/images/login-image.png" class="mw-30x" alt="" />
     </div>

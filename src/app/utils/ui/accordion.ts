@@ -12,7 +12,7 @@ export interface AccordionData {
           <div class="accordion-item">
             <div class="accordion-title" (click)="selectAccordion(i, ref)">{{item.title}}</div>
             <div class="accordion-list mb-3">
-              <div class="accordion-list-item" *ngFor="let sub of item.datas">{{sub.title}}</div>
+              <div class="accordion-list-item" *ngFor="let sub of item.children">{{sub.title}}</div>
             </div>
           </div>
         </div>

@@ -9,6 +9,8 @@ import { FooterComponent } from './components/layout/footer';
 import { LoginComponent } from './components/auth/login';
 import { RegisterComponent } from './components/auth/register';
 import { SharedModule } from './shared.module';
+import { authInterceptorProviders } from './services/auth/auth.interceptor';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,8 +25,9 @@ import { SharedModule } from './shared.module';
     HttpClientModule,
     AppRoutingModule,
     TranslateModule.forRoot(),
-    SharedModule
+    SharedModule, ReactiveFormsModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [authInterceptorProviders]
 })
 export class AppModule { }

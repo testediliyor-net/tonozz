@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-/**
- * Load Modules by Route
- */
 const routes: Routes = [
   {
     path: '',

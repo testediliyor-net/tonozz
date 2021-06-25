@@ -153,3 +153,18 @@ a {
     width: 100%;
   }
 }
+
+:disabled {
+  opacity: 0.4;
+}
+
+label.error {
+  font-size: 14px;
+  margin-top: 4px;
+  color: red;
+  display: block;
+}
+
+.relative {
+  position: relative;
+}

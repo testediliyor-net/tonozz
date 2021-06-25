@@ -1,6 +1,9 @@
 @mixin size($prefix: "") {
-  $i: 10;
+  $i: 0;
   @while $i <= 100 {
+    
+    $i: $i + 10;
+
     /*
       Width
       w-10    : 10%
@@ -48,7 +51,6 @@
       height: 100%;
     }
 
-    $i: $i + 10;
   }
 
   @for $i from 1 to 251 {
@@ -62,7 +64,7 @@
   }
 }
 
-@include size();
+@include size('');
 
 @include tablet {
   @include size("sm-");

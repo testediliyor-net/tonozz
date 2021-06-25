@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { CanActivate } from '@angular/router';
-import { AppComponent } from 'src/app/app.component';
+import { AuthService } from './auth.service';
+import { TokenStorageService } from './token-storage.service';
 
 @Injectable({ providedIn: 'root' })
 export class GuardServiceDemo implements CanActivate {
-  constructor() {
-
-  }
+  constructor(
+    private token: TokenStorageService,
+    private auth: AuthService) { }
 
   canActivate(): boolean {
-    return AppComponent.isAuthStatic = true;
+    return this.auth.isAuth;
   }
 
 }

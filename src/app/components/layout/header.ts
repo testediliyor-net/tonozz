@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'header-component',
@@ -11,19 +12,25 @@ export class HeaderComponent implements OnInit {
   isOpenUserModal: boolean;
   isOpenLoginModal: boolean;
   isOpenRegisterModal: boolean;
+
+  constructor(private auth: AuthService) { }
+
   get isAuth() {
-    return AppComponent.isAuthStatic;
+    return this.auth.isAuth;
   }
 
-  openLoginModal(status: boolean) {
-    this.isOpenLoginModal = status;
+  openLoginRegister(typ: string = '') {
+    if (typ === 'login') {
+      this.isOpenLoginModal = true;
+      this.isOpenRegisterModal = false;
+    } else if (typ === 'register') {
+      this.isOpenLoginModal = false;
+      this.isOpenRegisterModal = true;
+    } else {
+      this.isOpenLoginModal = false;
+      this.isOpenRegisterModal = false;
+    }
   }
-
-  openRegisterModal(status: boolean) {
-    this.isOpenRegisterModal = status;
-  }
-
-  constructor() { }
 
   ngOnInit(): void {
 
@@ -34,10 +41,6 @@ export class HeaderComponent implements OnInit {
       {
         label: 'Services',
         value: 'Services'
-      },
-      {
-        label: 'Job Offers',
-        value: 'Job Offers'
       }];
 
   }

@@ -7,30 +7,49 @@
     <div class="grid-group">
       <div class="auth-modal-header mb-3">
         <h1 class="fs-1x fs-md-2">Create An Account</h1>
-        <p class="fw-bold">Already an user? <a href="#" class="ml-1">Sign In</a></p>
+        <p class="fw-bold">Already an user? <a href="#" class="ml-1" (click)="openModal()">Sign In</a></p>
       </div>
-
       <div class="auth-modal-form">
-        <div class="form-group-box grid grid-col-2 grid-col-gap-1 m-0 p-0">
-          <div class="form-group">
-            <input type="text" placeholder="First Name" />
+        <form *ngIf="!isRegistered" [formGroup]="form" (ngSubmit)="onRegister()">
+          <div class="form-group-box grid grid-col-2 grid-col-gap-1 m-0 p-0">
+            <div class="form-group">
+              <input type="text" formControlName="first_name" placeholder="First Name" />
+              <label *ngIf="submitted && f.first_name.errors" class="error invalid-feedback">
+                <span *ngIf="f.first_name.errors.required">This field is required</span>
+                <span *ngIf="f.first_name.errors.other">{{f.first_name.errors.other}}</span>
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="text" formControlName="last_name" placeholder="Last Name" />
+              <label *ngIf="submitted && f.last_name.errors" class="error invalid-feedback">
+                <span *ngIf="f.last_name.errors.required">This field is required</span>
+                <span *ngIf="f.last_name.errors.other">{{f.last_name.errors.other}}</span>
+              </label>
+            </div>
           </div>
           <div class="form-group">
-            <input type="text" placeholder="Last Name" />
+            <input type="email" placeholder="Email Address" formControlName="email" />
+            <label *ngIf="submitted && f.email.errors" class="error invalid-feedback">
+              <span *ngIf="f.email.errors.required">This field is required</span>
+              <span *ngIf="f.email.errors.other">{{f.email.errors.other}}</span>
+            </label>
           </div>
-        </div>
-        <div class="form-group">
-          <input type="email" placeholder="Email Address" />
-        </div>
 
-        <div class="form-group">
-          <input type="password" placeholder="Password" />
-        </div>
+          <div class="form-group">
+            <input type="password" placeholder="Password" formControlName="password" />
+            <label *ngIf="submitted && f.password.errors" class="error invalid-feedback">
+              <span *ngIf="f.password.errors.required">This field is required</span>
+              <span *ngIf="f.password.errors.other">{{f.password.errors.other}}</span>
+            </label>
+          </div>
 
-        <div class="form-group">
-          <button>Sign Up</button>
+          <div class="form-group">
+            <button>Sign Up</button>
+          </div>
+        </form>
+        <div *ngIf="isRegistered" class="auth-register-success">
+          <h3>Your membership has been successfully registered.</h3>
         </div>
-
       </div>
       <div class="auth-modal-other">
 

@@ -7,7 +7,45 @@ header {
   min-height: 150px;
   width: 100%;
   display: block;
-  z-index: 9;
+  z-index: 119;
+
+  /*
+User Opened Modal
+*/
+  .user-modal {
+    position: absolute;
+    top: 150px;
+    right: 0;
+    background: white;
+    border: 1px solid $sky-blue;
+    border-top: 0;
+    border-radius: 0 0 20px 20px;
+    padding: 20px 35px;
+    box-shadow: 0 0 10px -4px #000;
+
+    a {
+      display: block;
+      padding: 4px 0;
+      transition: 0.3s;
+
+      i {
+        font-size: 26px;
+        color: $sky-blue;
+        margin-right: 5px;
+        min-width: 46px;
+      }
+
+      label {
+        color: $dark-gray2;
+        font-weight: bold;
+        pointer-events: none;
+      }
+
+      &:hover label {
+        color: $sky-blue;
+      }
+    }
+  }
 }
 
 .search-filter-container,
@@ -149,6 +187,10 @@ header {
         }
       }
     }
+
+    .user-modal {
+      top: 100px;
+    }
   }
 }
 
@@ -198,44 +240,6 @@ header {
 
         &:hover {
           color: black;
-        }
-      }
-    }
-
-    /*
-User Opened Modal
-*/
-    .user-modal {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: white;
-      border: 1px solid $sky-blue;
-      border-top: 0;
-      border-radius: 0 0 20px 20px;
-      padding: 20px 35px;
-      box-shadow: 0 0 10px -4px #000;
-
-      a {
-        display: block;
-        padding: 4px 0;
-        transition: 0.3s;
-
-        i {
-          font-size: 26px;
-          color: $sky-blue;
-          margin-right: 5px;
-          min-width: 46px;
-        }
-
-        label {
-          color: $dark-gray2;
-          font-weight: bold;
-          pointer-events: none;
-        }
-
-        &:hover label {
-          color: $sky-blue;
         }
       }
     }
@@ -314,6 +318,7 @@ User Opened Modal
         a {
           display: flex;
           align-items: center;
+          cursor: pointer;
 
           @extend .color-hover;
 
@@ -337,6 +342,7 @@ User Opened Modal
             font-weight: bold;
             max-width: 200px;
             white-space: nowrap;
+            pointer-events: none;
           }
 
           i {

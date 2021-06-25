@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+import { LangService } from 'src/app/services/lang.service';
+import { ServicesService } from 'src/app/services/services.service';
+import { IServiceCategory, IServiceSubCategory } from 'src/app/services/types/IServiceCategory';
 
 @Component({
   selector: 'services',
@@ -10,13 +13,33 @@ export class ServicesComponent implements OnInit {
 
   servicesDatas: any[];
   categories: any[];
-  serviceCategoryDatas: any[];
+  servicesCategoryDatas: any[];
 
-  constructor(private router: Router) {
-  }
+  constructor(
+    private router: Router,
+    private services: ServicesService,
+    private lang: LangService
+  ) { }
 
   showDetail() {
     this.router.navigate(['services/', 10])
+  }
+
+  async getCategories() {
+    const categories: IServiceCategory[] = await this.services.getCategories();
+    this.servicesCategoryDatas = categories.map((fn: IServiceCategory) => {
+      return {
+        ...fn,
+        title: fn['category_name_' + this.lang.getCurrentCalture],
+        children: fn.children.map((m: IServiceSubCategory) => {
+          return {
+            ...m,
+            title: m['category_name_' + this.lang.getCurrentCalture]
+          }
+        })
+      }
+    });
+    // })
   }
 
   ngOnInit(): void {
@@ -40,41 +63,7 @@ export class ServicesComponent implements OnInit {
       { sponsored: true },
     ].sort((a: any, b: any) => { return b.sponsored - a.sponsored });
 
-    this.serviceCategoryDatas = [
-      {
-        title: 'Lorem ipsum',
-        datas: [
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-        ]
-      }, {
-        title: 'Lorem ipsum',
-        datas: [
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-        ]
-      }, {
-        title: 'Lorem ipsum',
-        datas: [
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-          { title: 'Lorem ipsum dolor' },
-        ]
-      }
-    ]
+    this.getCategories();
 
     this.categories = [
       {
